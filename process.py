@@ -35,25 +35,25 @@ function_call_fs_namei_ast = open("/home/lookfiresu/function/function_call_ast/f
 import symbals per modules
 '''
 def import_symbals_fs():
-        child1 = subprocess.Popen(["cat", "/home/lookfiresu/Desktop/linux-3.13/symbals_function.txt"], stdout = subprocess.PIPE)
+        child1 = subprocess.Popen(["cat", "/home/lookfiresu/function/symbals_all.txt"], stdout = subprocess.PIPE)
         child2 = subprocess.Popen(["grep", "/fs/"], stdin = child1.stdout, stdout = symbals_fs)
         child2.wait()
         return
 
 def import_symbals_mm():
-        child1 = subprocess.Popen(["cat", "/home/lookfiresu/Desktop/linux-3.13/symbals_function.txt"], stdout = subprocess.PIPE)
+        child1 = subprocess.Popen(["cat", "/home/lookfiresu/function/symbals_all.txt"], stdout = subprocess.PIPE)
         child2 = subprocess.Popen(["grep", "/mm/"], stdin = child1.stdout, stdout = symbals_mm)
         child2.wait()
         return
 
 def import_symbals_kernel():
-        child1 = subprocess.Popen(["cat", "/home/lookfiresu/Desktop/linux-3.13/symbals_function.txt"], stdout = subprocess.PIPE)
+        child1 = subprocess.Popen(["cat", "/home/lookfiresu/function/symbals_all.txt"], stdout = subprocess.PIPE)
         child2 = subprocess.Popen(["grep", "/kernel/"], stdin = child1.stdout, stdout = symbals_kernel)
         child2.wait()
         return
 
 def import_symbals_block():
-        child1 = subprocess.Popen(["cat", "/home/lookfiresu/Desktop/linux-3.13/symbals_function.txt"], stdout = subprocess.PIPE)
+        child1 = subprocess.Popen(["cat", "/home/lookfiresu/function/symbals_all.txt"], stdout = subprocess.PIPE)
         child2 = subprocess.Popen(["grep", "/block/"], stdin = child1.stdout, stdout = symbals_block)
         child2.wait()
         return
