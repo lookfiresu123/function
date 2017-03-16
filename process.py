@@ -9,14 +9,19 @@ symbals_fs = open("/home/lookfiresu/function/symbals_fs.txt", "r+")
 symbals_mm = open("/home/lookfiresu/function/symbals_mm.txt", "r+")
 symbals_kernel = open("/home/lookfiresu/function/symbals_kernel.txt", "r+")
 symbals_block = open("/home/lookfiresu/function/symbals_block.txt", "r+")
+symbals_include = open("/home/lookfiresu/function/symbals_include.txt", "r+")
 
 
 
-collect_symbals_table = []              # [function, filename, linenum, module]
-collect_interface_table = []              # [function, filename, linenum, module]
-collect_interface_dict = {}
+collect_symbals_table = []                              # [function, filename, linenum, module]
+collect_symbals_dict = {}                               # {function, [function, filename, linenum, module]}
+
+collect_interface_table = []                            # [function, filename, linenum, module]
+collect_interface_dict = {}                             # {function, [function, filename, linenum, module]}
 
 collect_function_call_table = []
+collect_function_call_called_dict = {}                  # {call_function, [called_functions]}
+collect_interface_call_called_dict = {}                 # {call_function, [called_interfaces]}
 
 '''
 store information of interface of per module
@@ -25,11 +30,13 @@ interface_fs = open("/home/lookfiresu/function/interface_fs.txt", "r+")
 interface_mm = open("/home/lookfiresu/function/interface_mm.txt", "r+")
 interface_kernel = open("/home/lookfiresu/function/interface_kernel.txt", "r+")
 interface_block = open("/home/lookfiresu/function/interface_block.txt", "r+")
+interface_include = open("/home/lookfiresu/function/interface_include.txt", "r+")
 
 '''
 store ast information of function call
 '''
 function_call_fs_namei_ast = open("/home/lookfiresu/function/function_call_ast/function_call_fs_namei_ast.txt", "r+")
+function_call_fs_ast = open("/home/lookfiresu/function/function_call_ast/function_call_fs_ast.txt", "r+")
 
 '''
 import symbals per modules
@@ -58,11 +65,18 @@ def import_symbals_block():
         child2.wait()
         return
 
+def import_symbals_include():
+        child1 = subprocess.Popen(["cat", "/home/lookfiresu/function/symbals_all.txt"], stdout = subprocess.PIPE)
+        child2 = subprocess.Popen(["grep", "/include/linux/"], stdin = child1.stdout, stdout = symbals_include)
+        child2.wait()
+        return
+
 def import_symbals():
         import_symbals_fs()
         import_symbals_mm()
         import_symbals_kernel()
         import_symbals_block()
+        import_symbals_include()
         return
 
 
@@ -92,12 +106,21 @@ def import_interface_block():
         child2 = subprocess.Popen(["grep", " T "], stdin = child1.stdout, stdout = interface_block)
         child2.wait()
         return
+'''
+because function defined in include is always static, so there are no interface
+'''
+def import_interface_include():
+        child1 = subprocess.Popen(["cat", "/home/lookfiresu/function/symbals_include.txt"], stdout = subprocess.PIPE)
+        child2 = subprocess.Popen(["grep", " T "], stdin = child1.stdout, stdout = interface_include)
+        child2.wait()
+        return
 
 def import_interface():
         import_interface_fs()
         import_interface_mm()
         import_interface_kernel()
         import_interface_block()
+        import_interface_include()
         return
 
 '''
@@ -187,11 +210,39 @@ def collect_symbals_block(table):
                         table.insert(len(table), list);
         return
 
+def collect_symbals_include(table):
+        while 1:
+                lines = symbals_include.readlines(100000)
+                if not lines:
+                        break
+                for line in lines:
+                        patterns = line.split()
+                        address = patterns[0]
+                        function = patterns[2]
+                        patterns = patterns[3].split(':')
+                        filename = patterns[0]
+                        linenum = patterns[1]
+                        list = []
+                        list.insert(len(list), address)
+                        list.insert(len(list), function)
+                        list.insert(len(list), filename)
+                        list.insert(len(list), linenum)
+                        list.insert(len(list), "include")
+                        table.insert(len(table), list);
+        return
+
 def collect_symbals():
         collect_symbals_fs(collect_symbals_table);
         collect_symbals_mm(collect_symbals_table);
         collect_symbals_kernel(collect_symbals_table);
         collect_symbals_block(collect_symbals_table);
+        collect_symbals_include(collect_symbals_table);
+        for pattern in collect_symbals_table:
+                collect_symbals_dict[pattern[1]] = pattern
+        '''
+        for pattern in collect_symbals_dict:
+                print pattern
+        '''
         return
 
 '''
@@ -281,6 +332,27 @@ def collect_interface_block(table):
                         table.insert(len(table), list);
         return
 
+def collect_interface_include(table):
+        while 1:
+                lines = interface_include.readlines(100000)
+                if not lines:
+                        break
+                for line in lines:
+                        patterns = line.split()
+                        address = patterns[0]
+                        function = patterns[2]
+                        patterns = patterns[3].split(':')
+                        filename = patterns[0]
+                        linenum = patterns[1]
+                        list = []
+                        list.insert(len(list), address)
+                        list.insert(len(list), function)
+                        list.insert(len(list), filename)
+                        list.insert(len(list), linenum)
+                        list.insert(len(list), "include")
+                        table.insert(len(table), list);
+        return
+
 '''
 store collect_interface to dict data struct for search
 '''
@@ -289,6 +361,7 @@ def collect_interface():
         collect_interface_mm(collect_interface_table);
         collect_interface_kernel(collect_interface_table);
         collect_interface_block(collect_interface_table);
+        collect_interface_include(collect_interface_table)
 
         # store to dict
         for pattern in collect_interface_table:
@@ -300,14 +373,49 @@ def collect_interface():
 '''
 deal with function call information of fs/namei.c
 '''
-def collect_function_call_per_file(file, table):
-        per_table = []
+def collect_function_call_per_file(file, dict):
+        temp_table = []
+        called_functions = []
+        call_function = ""
         while 1:
-                lines = function_call_fs_namei_ast.readlines(100000)
+                # lines = function_call_fs_namei_ast.readlines(100000)
+                lines = file.readlines(1000000)
                 if not lines:
                         break
                 for line in lines:
                         patterns = line.split()
+                        temp_table.insert(len(temp_table), patterns)
+
+                for index in range(len(temp_table) - 1):
+                        patterns = temp_table[index]
+                        # if this is a call function record
+                        if patterns[0] == "FunctionDecl":
+                                # determine defination with function call or (declaration or defination without function call)
+                                patterns_next = temp_table[index+1]
+                                if patterns_next[0] == "FunctionDecl":
+                                        # declaration or defination without function call
+                                        continue
+                                # defination with function call
+                                if call_function != "" and called_functions != []:
+                                        dict[call_function] = called_functions
+                                called_functions = []
+                                call_function = ""
+                                for index in range(len(patterns) - 1):
+                                        if patterns[index].endswith('>'):
+                                                call_function = patterns[index+1]
+                        # if this is a called function record
+                        if patterns[0] == "DeclRefExpr":
+                                for pattern in patterns:
+                                        if pattern == "Function":
+                                                break;
+                                index = patterns.index(pattern)
+                                called_function = patterns[index+2]
+                                called_function = called_function.replace("\'", "")
+                                called_functions.insert(len(called_functions), called_function)
+ 
+
+        return
+'''
                         for pattern in patterns:
                                 if pattern == "Function":
                                         break;
@@ -315,22 +423,63 @@ def collect_function_call_per_file(file, table):
                         function = patterns[index+2]
                         function = function.replace("\'", "")
                         table.insert(len(table), function)
-        return
+return
+'''
 
-def collect_function_call():
-        collect_function_call_per_file(function_call_fs_namei_ast, collect_function_call_table)
+'''
+collect relationship between call_function and called_functions, and print their module
+'''
+def collect_function_call(module_from):
+        collect_function_call_per_file(function_call_fs_ast, collect_function_call_called_dict)
+        for call_function in collect_function_call_called_dict:
+                called_functions = collect_function_call_called_dict[call_function]
+                function_module_list = []
+                for function in called_functions:
+                        function_module = []
+                        value = collect_interface_dict.get(function)
+                        if value == None:
+                                value = collect_symbals_dict.get(function)
+                                if value == None:
+                                        function_module.insert(len(function_module), function)
+                                        function_module.insert(len(function_module), "other")
+                                else:
+                                        function_module.insert(len(function_module), function)
+                                        function_module.insert(len(function_module), value[4])
+                        else:
+                                function_module.insert(len(function_module), function)
+                                function_module.insert(len(function_module), value[4])
+                        function_module_list.insert(len(function_module_list), function_module);
+
+                value = collect_symbals_dict.get(call_function)
+                if value == None:
+                        print call_function + ": "
+                else:
+                        print call_function + ": " + value[2]
+                for pattern in function_module_list:
+                        print pattern
+                print ""
+
         return
 
 '''
 detect interface, for example fs/namei.c
 '''
 def detect_interface(module_from):
-        for function in collect_function_call_table:
-                value = collect_interface_dict.get(function)
-                if value == None:
-                        continue
-                if value[4] != module_from:
-                        print function + ", " + value[4]
+        for call_function in collect_function_call_called_dict:
+                called_functions = collect_function_call_called_dict[call_function]
+                called_interfaces = []
+                for function in called_functions:
+                        value = collect_interface_dict.get(function)
+                        if value == None:
+                                continue
+                        if module_from != value[4]:
+                                called_interfaces.insert(len(called_interfaces), function)
+                if called_interfaces != []:
+                        collect_interface_call_called_dict[call_function] = called_interfaces
+        for pattern in collect_interface_call_called_dict:
+                print pattern + ": "
+                print collect_interface_call_called_dict[pattern]
+                print ""
         return
 
 
@@ -340,8 +489,8 @@ def main():
         #import_interface()
         collect_symbals()
         collect_interface()
-        collect_function_call()
-        detect_interface("fs")
+        collect_function_call("fs")
+        #detect_interface("fs")
         return
 
 if __name__ == "__main__":
