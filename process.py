@@ -23,6 +23,9 @@ collect_function_call_table = []
 collect_function_call_called_dict = {}                  # {call_function, [called_functions]}
 collect_interface_call_called_dict = {}                 # {call_function, [called_interfaces]}
 
+my_set = set([])
+my_dict = {}
+
 '''
 store information of interface of per module
 '''
@@ -451,6 +454,7 @@ def collect_function_call(module_from):
                         function_module_list.insert(len(function_module_list), function_module);
 
                 value = collect_symbals_dict.get(call_function)
+                '''
                 if value == None:
                         print call_function + ": "
                 else:
@@ -458,6 +462,7 @@ def collect_function_call(module_from):
                 for pattern in function_module_list:
                         print pattern
                 print ""
+                '''
 
         return
 
@@ -482,6 +487,46 @@ def detect_interface(module_from):
                 print ""
         return
 
+def search_interface_per_function(function):
+        #print function, index
+        #check if @function is a valid symbal
+        value = collect_symbals_dict.get(function)
+        if value == None:
+                return
+        else:
+                module = value[4]
+                # check if @function is has a call-called relationship
+                value = collect_function_call_called_dict.get(function)
+                if value == None:
+                        return
+                else:
+                        called_functions = collect_function_call_called_dict[function]
+                        # use my_set as stack to avoid ring, for example: A -> B, B -> A
+                        my_set.add(function)
+                        for item in called_functions:
+                                #check if this called_function is an interface function
+                                value = collect_interface_dict.get(item)
+                                if value == None:
+                                        #this called function is not an interface function, go on search inside
+                                        if item not in my_set:
+                                                #my_set.add(item)
+                                                search_interface_per_function(item)
+                                        else:
+                                                continue
+                                elif value[4] == module or value[4] == "include":
+                                        #go on search inside
+                                        if item not in my_set:
+                                                #my_set.add(item)
+                                                search_interface_per_function(item)
+                                        else:
+                                                continue
+                                else:
+                                        my_dict[item] = function
+                                        #print function + " -> " + item
+
+                        my_set.remove(function)
+                        return
+
 
 
 def main():
@@ -490,8 +535,20 @@ def main():
         collect_symbals()
         collect_interface()
         collect_function_call("fs")
+        
+        search_interface_per_function("do_sys_open")
+        search_interface_per_function("ext2_lookup")
+        search_interface_per_function("ext2_create")
+        #print my_set
+        
+        print "do_sys_open: "
+        print "------------------------------------------------"
+        for item in my_dict:
+                print my_dict[item] + " -> " + item      
+        
         #detect_interface("fs")
         return
+        
 
 if __name__ == "__main__":
         main()
