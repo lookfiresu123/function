@@ -24,8 +24,8 @@ collect_function_call_called_dict = {}                  # {call_function, [calle
 collect_interface_call_called_dict = {}                 # {call_function, [called_interfaces]}
 
 my_set = set([])
-my_dict = {}
-
+result_set = set([])
+have_analysised_set = set([])
 '''
 store information of interface of per module
 '''
@@ -374,7 +374,7 @@ def collect_interface():
 
 
 '''
-deal with function call information of fs/namei.c
+deal with function call information of fs/*.c and fs/ext2/*.c
 '''
 def collect_function_call_per_file(file, dict):
         temp_table = []
@@ -414,7 +414,14 @@ def collect_function_call_per_file(file, dict):
                                 index = patterns.index(pattern)
                                 called_function = patterns[index+2]
                                 called_function = called_function.replace("\'", "")
-                                called_functions.insert(len(called_functions), called_function)
+                                #print called_function
+                                value = collect_symbals_dict.get(called_function)
+                                if value == None:
+                                        pair = [called_function, "other"]
+                                        called_functions.insert(len(called_functions), pair)
+                                else:
+                                        pair = [called_function, value[4]]
+                                        called_functions.insert(len(called_functions), pair)
  
 
         return
@@ -434,35 +441,16 @@ collect relationship between call_function and called_functions, and print their
 '''
 def collect_function_call(module_from):
         collect_function_call_per_file(function_call_fs_ast, collect_function_call_called_dict)
+        '''
         for call_function in collect_function_call_called_dict:
                 called_functions = collect_function_call_called_dict[call_function]
-                function_module_list = []
-                for function in called_functions:
-                        function_module = []
-                        value = collect_interface_dict.get(function)
-                        if value == None:
-                                value = collect_symbals_dict.get(function)
-                                if value == None:
-                                        function_module.insert(len(function_module), function)
-                                        function_module.insert(len(function_module), "other")
-                                else:
-                                        function_module.insert(len(function_module), function)
-                                        function_module.insert(len(function_module), value[4])
-                        else:
-                                function_module.insert(len(function_module), function)
-                                function_module.insert(len(function_module), value[4])
-                        function_module_list.insert(len(function_module_list), function_module);
-
-                value = collect_symbals_dict.get(call_function)
-                '''
-                if value == None:
-                        print call_function + ": "
-                else:
-                        print call_function + ": " + value[2]
-                for pattern in function_module_list:
-                        print pattern
+                #function_module_list = []
+                print call_function + ": "
+                for item in called_functions:
+                        print item
                 print ""
-                '''
+        '''
+
 
         return
 
@@ -489,45 +477,57 @@ def detect_interface(module_from):
 
 def search_interface_per_function(function):
         #print function, index
-        #check if @function is a valid symbal
-        value = collect_symbals_dict.get(function)
+        # check if @function is has a call-called relationship
+        value = collect_function_call_called_dict.get(function)
         if value == None:
                 return
         else:
-                module = value[4]
-                # check if @function is has a call-called relationship
-                value = collect_function_call_called_dict.get(function)
-                if value == None:
+
+                called_functions = collect_function_call_called_dict[function]
+                # if this function have been analysised, we could avoid to do again
+                if function in have_analysised_set:
                         return
-                else:
-                        called_functions = collect_function_call_called_dict[function]
-                        # use my_set as stack to avoid ring, for example: A -> B, B -> A
-                        my_set.add(function)
-                        for item in called_functions:
-                                #check if this called_function is an interface function
-                                value = collect_interface_dict.get(item)
-                                if value == None:
-                                        #this called function is not an interface function, go on search inside
-                                        if item not in my_set:
-                                                #my_set.add(item)
-                                                search_interface_per_function(item)
-                                        else:
-                                                continue
-                                elif value[4] == module or value[4] == "include":
-                                        #go on search inside
-                                        if item not in my_set:
-                                                #my_set.add(item)
-                                                search_interface_per_function(item)
-                                        else:
-                                                continue
+                # use my_set as stack to avoid ring, for example: A -> B, B -> A
+                my_set.add(function)
+                have_analysised_set.add(function)
+                for pattern in called_functions:
+                        item = pattern[0]
+                        module = pattern[1]
+                        #value = collect_interface_dict.get(item)
+                        if module == "other" or module == "fs" or module == "include":
+                                #go on search inside
+                                if item not in my_set:
+                                        #my_set.add(item)
+                                        search_interface_per_function(item)
                                 else:
-                                        my_dict[item] = function
-                                        #print function + " -> " + item
+                                        continue
+                        else:
+                                #my_dict[item] = function
+                                str = function + " -> " + item
+                                #print str, index
+                                result_set.add(str)
+                                #print function + " -> " + item
 
-                        my_set.remove(function)
-                        return
+                my_set.remove(function)
+                return
 
 
+def format_and_print_search_result(list):
+        dict = {}       # {call_function, [interface_functions] }
+        for str in list:
+                patterns = str.split();
+                call_function = patterns[0]
+                interface_function = patterns[2]
+                value = dict.get(call_function)
+                if value == None:
+                        dict[call_function] = [interface_function]
+                else:
+                        dict[call_function].insert(len(dict[call_function]), interface_function);
+
+        for pattern in dict:
+                print pattern + " -> ", dict[pattern]
+
+        return
 
 def main():
         #import_symbals()
@@ -535,7 +535,7 @@ def main():
         collect_symbals()
         collect_interface()
         collect_function_call("fs")
-        
+               
         search_interface_per_function("do_sys_open")
         search_interface_per_function("ext2_lookup")
         search_interface_per_function("ext2_create")
@@ -543,9 +543,9 @@ def main():
         
         print "do_sys_open: "
         print "------------------------------------------------"
-        for item in my_dict:
-                print my_dict[item] + " -> " + item      
-        
+        sorted_result = sorted(result_set)      # result_set is a set, but sorted_result is a list
+        format_and_print_search_result(sorted_result)
+               
         #detect_interface("fs")
         return
         
