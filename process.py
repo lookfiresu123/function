@@ -26,6 +26,7 @@ collect_interface_call_called_dict = {}                 # {call_function, [calle
 my_set = set([])
 result_set = set([])
 have_analysised_set = set([])
+interface_per_module_dict = {}                          # {call_function, [called_interfaces]}
 '''
 store information of interface of per module
 '''
@@ -455,26 +456,31 @@ def collect_function_call(module_from):
         return
 
 '''
-detect interface, for example fs/namei.c
+search interface per module
 '''
-def detect_interface(module_from):
+def search_interface_per_module(module_from):
         for call_function in collect_function_call_called_dict:
                 called_functions = collect_function_call_called_dict[call_function]
+                #print call_function, called_functions
                 called_interfaces = []
-                for function in called_functions:
-                        value = collect_interface_dict.get(function)
-                        if value == None:
+                for pattern in called_functions:
+                        item = pattern[0]
+                        module = pattern[1]
+                        if module == module_from or module == "include" or module == "other":
                                 continue
-                        if module_from != value[4]:
-                                called_interfaces.insert(len(called_interfaces), function)
+                        else:
+                                value = collect_interface_dict.get(item)
+                                if value != None:
+                                        called_interfaces.insert(len(called_interfaces), pattern)
                 if called_interfaces != []:
-                        collect_interface_call_called_dict[call_function] = called_interfaces
-        for pattern in collect_interface_call_called_dict:
-                print pattern + ": "
-                print collect_interface_call_called_dict[pattern]
-                print ""
-        return
+                        #print called_interfaces
+                        interface_per_module_dict[call_function] = called_interfaces
+        
+        return                                                                          
 
+'''
+search interface per function
+'''
 def search_interface_per_function(function):
         #print function, index
         # check if @function is has a call-called relationship
@@ -529,24 +535,36 @@ def format_and_print_search_result(list):
 
         return
 
+def test_search_for_interface_per_function(function):
+        search_interface_per_function(function)
+        #print my_set
+
+        print function + ": "
+        print "------------------------------------------------"
+        sorted_result = sorted(result_set)      # result_set is a set, but sorted_result is a list
+        format_and_print_search_result(sorted_result)
+        return
+
+
+def test_search_for_interface_per_module(module):
+        search_interface_per_module(module)
+
+        for pattern in interface_per_module_dict:
+                print pattern + ": "
+                called_interfaces = interface_per_module_dict[pattern]
+                for item in called_interfaces:
+                        print item
+                print ""
+        return
+
 def main():
         #import_symbals()
         #import_interface()
         collect_symbals()
         collect_interface()
         collect_function_call("fs")
-               
-        search_interface_per_function("do_sys_open")
-        search_interface_per_function("ext2_lookup")
-        search_interface_per_function("ext2_create")
-        #print my_set
-        
-        print "do_sys_open: "
-        print "------------------------------------------------"
-        sorted_result = sorted(result_set)      # result_set is a set, but sorted_result is a list
-        format_and_print_search_result(sorted_result)
-               
-        #detect_interface("fs")
+        test_search_for_interface_per_function("do_sys_open")
+        #test_search_for_interface_per_module("fs")
         return
         
 

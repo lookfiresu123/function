@@ -1,0 +1,4927 @@
+pmd_none_or_trans_huge_or_clear_bad: 
+['pmd_clear_bad', 'mm']
+
+perf_trace_writeback_congest_waited_template: 
+['perf_trace_buf_prepare', 'kernel']
+
+invalidate_bh_lrus: 
+['on_each_cpu_cond', 'kernel']
+
+proc_nr_inodes: 
+['proc_doulongvec_minmax', 'kernel']
+
+dentry_lock_for_move: 
+['_raw_spin_lock', 'kernel']
+['_raw_spin_lock', 'kernel']
+['_raw_spin_lock', 'kernel']
+['_raw_spin_lock', 'kernel']
+['_raw_spin_lock', 'kernel']
+['_raw_spin_lock', 'kernel']
+
+posix_lock_file_wait: 
+['_cond_resched', 'kernel']
+['prepare_to_wait_event', 'kernel']
+['abort_exclusive_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+memcg_memory_allocated_add: 
+['res_counter_charge_nofail', 'kernel']
+
+__raw_write_lock_bh: 
+['local_bh_disable', 'kernel']
+
+elf_fdpic_dump_segments: 
+['get_dump_page', 'mm']
+['put_page', 'mm']
+
+grab_super_passive: 
+['down_read_trylock', 'kernel']
+['up_read', 'kernel']
+
+register_trace_sched_process_fork: 
+['tracepoint_probe_register', 'kernel']
+
+irq_get_chip_data: 
+['irq_get_irq_data', 'kernel']
+
+trace_block_rq_insert_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+dio_bio_submit: 
+['_raw_spin_lock_irqsave', 'kernel']
+['submit_bio', 'block']
+
+kill_fasync_rcu: 
+['printk', 'kernel']
+['_raw_spin_lock_irqsave', 'kernel']
+
+__bio_unmap_user: 
+['set_page_dirty_lock', 'mm']
+['put_page', 'mm']
+
+ext2_alloc_inode: 
+['kmem_cache_alloc', 'mm']
+
+bio_alloc_bioset: 
+['mempool_alloc', 'mm']
+['mempool_alloc', 'mm']
+['mempool_free', 'mm']
+
+mb_cache_entry_get: 
+['autoremove_wake_function', 'kernel']
+['prepare_to_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+SyS_ppoll: 
+['sigprocmask', 'kernel']
+['sigprocmask', 'kernel']
+
+mem_cgroup_oom_enable: 
+['warn_slowpath_null', 'kernel']
+
+register_trace_writeback_write_inode_start: 
+['tracepoint_probe_register', 'kernel']
+
+elf_fdpic_map_file: 
+['printk', 'kernel']
+
+mem_cgroup_begin_update_page_stat: 
+['__mem_cgroup_begin_update_page_stat', 'mm']
+
+ftrace_raw_output_wbc_class: 
+['ftrace_raw_output_prep', 'kernel']
+['trace_seq_printf', 'kernel']
+
+wait_on_page_locked: 
+['wait_on_page_bit', 'mm']
+
+trace_sched_migrate_task_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+simple_attr_open: 
+['__mutex_init', 'kernel']
+
+ioctl_fsfreeze: 
+['capable', 'kernel']
+
+trace_block_rq_abort_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+dup_fd: 
+['kmem_cache_alloc', 'mm']
+['kmem_cache_free', 'mm']
+
+register_trace_writeback_bdi_unregister: 
+['tracepoint_probe_register', 'kernel']
+
+biovec_init_slabs: 
+['kmem_cache_create', 'mm']
+
+bd_prepare_to_claim: 
+['bit_waitqueue', 'kernel']
+['autoremove_wake_function', 'kernel']
+['prepare_to_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+bio_split: 
+['mempool_alloc', 'mm']
+
+get_pageblock_migratetype: 
+['get_pageblock_flags_group', 'mm']
+
+pmd_none_or_clear_bad: 
+['pmd_clear_bad', 'mm']
+
+C_SYSC_signalfd4: 
+['sigset_from_compat', 'kernel']
+['compat_alloc_user_space', 'kernel']
+
+irq_get_trigger_type: 
+['irq_get_irq_data', 'kernel']
+
+inode_sleep_on_writeback: 
+['autoremove_wake_function', 'kernel']
+['bit_waitqueue', 'kernel']
+['prepare_to_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+SYSC_timerfd_create: 
+['__init_waitqueue_head', 'kernel']
+['alarm_init', 'kernel']
+['hrtimer_init', 'kernel']
+['ktime_get_monotonic_offset', 'kernel']
+['kfree', 'mm']
+
+__mb_cache_entry_forget: 
+['kmem_cache_free', 'mm']
+
+bdev_i_callback: 
+['kmem_cache_free', 'mm']
+
+bio_free_map_data: 
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+compat_sys_io_submit: 
+['compat_alloc_user_space', 'kernel']
+
+notify_change: 
+['warn_slowpath_null', 'kernel']
+['current_fs_time', 'kernel']
+
+hrtimer_start_expires: 
+['hrtimer_start_range_ns', 'kernel']
+
+wb_update_bandwidth: 
+['__bdi_update_bandwidth', 'mm']
+
+get_active_super: 
+['up_write', 'kernel']
+
+lease_get_mtime: 
+['current_fs_time', 'kernel']
+
+bio_pair_release: 
+['mempool_free', 'mm']
+
+register_trace_writeback_wait_iff_congested: 
+['tracepoint_probe_register', 'kernel']
+
+compat_sys_mount: 
+['free_pages', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+bprm_change_interp: 
+['kfree', 'mm']
+['kstrdup', 'mm']
+
+format_corename: 
+['do_gettimeofday', 'kernel']
+['down_read', 'kernel']
+['up_read', 'kernel']
+
+sum_frag_mem_limit: 
+['local_bh_disable', 'kernel']
+['local_bh_enable', 'kernel']
+
+block_llseek: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+m_start: 
+['down_read', 'kernel']
+
+ep_unregister_pollwait: 
+['kmem_cache_free', 'mm']
+
+rcu_read_lock_bh: 
+['local_bh_disable', 'kernel']
+
+chrdev_init: 
+['bdi_init', 'mm']
+['panic', 'kernel']
+
+f_getown: 
+['_raw_read_lock', 'kernel']
+['pid_vnr', 'kernel']
+
+ext2_put_page: 
+['put_page', 'mm']
+
+ftrace_define_fields_writeback_dirty_inode_template: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+locks_delete_lock: 
+['put_pid', 'kernel']
+
+mmdrop: 
+['__mmdrop', 'kernel']
+
+ep_wake_up_nested: 
+['__wake_up', 'kernel']
+
+flush_delayed_fput: 
+['delayed_work_timer_fn', 'kernel']
+
+old_reloc: 
+['printk', 'kernel']
+
+locks_wake_up_blocks: 
+['__wake_up', 'kernel']
+
+unregister_trace_block_rq_complete: 
+['tracepoint_probe_unregister', 'kernel']
+
+task_pgrp_vnr: 
+['__task_pid_nr_ns', 'kernel']
+
+trace_writeback_dirty_page_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+dio_bio_reap: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+pmd_trans_huge_lock: 
+['__pmd_trans_huge_lock', 'mm']
+
+locks_delete_global_locks: 
+['lg_local_lock_cpu', 'kernel']
+['lg_local_unlock_cpu', 'kernel']
+
+__generic_file_splice_read: 
+['find_get_pages_contig', 'mm']
+['page_cache_sync_readahead', 'mm']
+['find_get_page', 'mm']
+['add_to_page_cache_lru', 'mm']
+['put_page', 'mm']
+['unlock_page', 'mm']
+['page_cache_async_readahead', 'mm']
+['unlock_page', 'mm']
+['find_or_create_page', 'mm']
+['put_page', 'mm']
+['unlock_page', 'mm']
+['put_page', 'mm']
+
+wb_do_writeback: 
+['complete', 'kernel']
+['kfree', 'mm']
+
+zap_process: 
+['task_clear_jobctl_pending', 'kernel']
+
+do_execve_common: 
+['unshare_files', 'kernel']
+['sched_exec', 'kernel']
+['acct_update_integrals', 'kernel']
+['task_numa_free', 'kernel']
+['mmput', 'kernel']
+
+dcookie_init: 
+['kmem_cache_create', 'mm']
+['kmem_cache_destroy', 'mm']
+
+pipe_lock_nested: 
+['mutex_lock', 'kernel']
+
+deactivate_locked_super: 
+['unregister_shrinker', 'mm']
+['up_write', 'kernel']
+
+end_buffer_write_sync: 
+['printk', 'kernel']
+['bdevname', 'block']
+
+exiting_irq: 
+['irq_exit', 'kernel']
+
+__clocksource_updatefreq_hz: 
+['__clocksource_updatefreq_scale', 'kernel']
+
+spin_unlock: 
+['_raw_spin_unlock', 'kernel']
+
+ftrace_raw_output_balance_dirty_pages: 
+['ftrace_raw_output_prep', 'kernel']
+['trace_seq_printf', 'kernel']
+
+simple_unlink: 
+['current_kernel_time', 'kernel']
+
+napi_synchronize: 
+['msleep', 'kernel']
+
+__ext2_truncate_blocks: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+f_setown_ex: 
+['find_vpid', 'kernel']
+
+bm_evict_inode: 
+['kfree', 'mm']
+
+__set_page_dirty: 
+['warn_slowpath_null', 'kernel']
+['account_page_dirtied', 'mm']
+
+inode_newsize_ok: 
+['send_sig', 'kernel']
+
+kiocb_free: 
+['kmem_cache_free', 'mm']
+
+ext2_new_inode: 
+['get_seconds', 'kernel']
+
+blk_clear_queue_congested: 
+['clear_bdi_congested', 'mm']
+
+perf_trace_writeback_pages_written: 
+['perf_trace_buf_prepare', 'kernel']
+
+locks_start: 
+['lg_global_lock', 'kernel']
+
+simple_transaction_release: 
+['free_pages', 'mm']
+
+put_binfmt: 
+['module_put', 'kernel']
+
+audit_log_bprm_fcaps: 
+['__audit_log_bprm_fcaps', 'kernel']
+
+netif_tx_unlock_bh: 
+['local_bh_enable', 'kernel']
+
+ep_call_nested: 
+['_raw_spin_lock_irqsave', 'kernel']
+['_raw_spin_lock_irqsave', 'kernel']
+
+alloc_anon_inode: 
+['current_kernel_time', 'kernel']
+
+pud_alloc_one: 
+['get_zeroed_page', 'mm']
+
+trace_block_bio_queue_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+iterate_supers: 
+['down_read', 'kernel']
+['up_read', 'kernel']
+
+register_trace_writeback_sb_inodes_requeue: 
+['tracepoint_probe_register', 'kernel']
+
+skb_dst_force: 
+['warn_slowpath_null', 'kernel']
+
+bio_copy_user_iov: 
+['__free_pages', 'mm']
+
+init_completion: 
+['__init_waitqueue_head', 'kernel']
+
+shrink_slab: 
+['proc_dointvec_minmax', 'kernel']
+
+__mark_inode_dirty: 
+['warn_slowpath_fmt', 'kernel']
+['bdi_wakeup_thread_delayed', 'mm']
+
+register_trace_block_bio_complete: 
+['tracepoint_probe_register', 'kernel']
+
+sb_wait_write: 
+['autoremove_wake_function', 'kernel']
+['prepare_to_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+end_buffer_async_read: 
+['unlock_page', 'mm']
+
+usermodehelper_disable: 
+['__usermodehelper_disable', 'kernel']
+
+ftrace_define_fields_writeback_class: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+vfs_rmdir: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+splice_grow_spd: 
+['kfree', 'mm']
+['kfree', 'mm']
+
+__bprm_mm_init: 
+['down_write', 'kernel']
+['insert_vm_struct', 'mm']
+['up_write', 'kernel']
+['up_write', 'kernel']
+
+block_invalidatepage: 
+['try_to_release_page', 'mm']
+
+mb_cache_entry_alloc: 
+['kmem_cache_alloc', 'mm']
+
+do_coredump: 
+['audit_core_dumps', 'kernel']
+['prepare_creds', 'kernel']
+['override_creds', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+['call_usermodehelper_setup', 'kernel']
+['call_usermodehelper_exec', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+['unshare_files', 'kernel']
+['kfree', 'mm']
+['revert_creds', 'kernel']
+
+make_kqid: 
+['make_kuid', 'kernel']
+['make_kgid', 'kernel']
+['make_kprojid', 'kernel']
+
+writeback_sb_inodes: 
+['__cond_resched_lock', 'kernel']
+
+memcg_memory_allocated_read: 
+['res_counter_read_u64', 'kernel']
+
+get_io_context_active: 
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_null', 'kernel']
+
+fill_note_info: 
+['warn_slowpath_null', 'kernel']
+
+ext2_error: 
+['printk', 'kernel']
+['panic', 'kernel']
+
+vfs_setxattr: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+unregister_trace_writeback_write_inode: 
+['tracepoint_probe_unregister', 'kernel']
+
+audit_free: 
+['__audit_free', 'kernel']
+
+aio_nr_sub: 
+['warn_slowpath_null', 'kernel']
+
+task_tgid_vnr: 
+['pid_vnr', 'kernel']
+
+__register_binfmt: 
+['warn_slowpath_null', 'kernel']
+['_raw_write_lock', 'kernel']
+
+__blkdev_get: 
+['get_gendisk', 'block']
+['disk_block_events', 'block']
+['mutex_lock', 'kernel']
+['disk_get_part', 'block']
+['mutex_unlock', 'kernel']
+['disk_unblock_events', 'block']
+['put_disk', 'block']
+['module_put', 'kernel']
+['blk_get_backing_dev_info', 'block']
+['rescan_partitions', 'block']
+['invalidate_partitions', 'block']
+['bdget_disk', 'block']
+['disk_get_part', 'block']
+['rescan_partitions', 'block']
+['invalidate_partitions', 'block']
+['put_disk', 'block']
+['module_put', 'kernel']
+['mutex_unlock', 'kernel']
+['disk_unblock_events', 'block']
+['mutex_unlock', 'kernel']
+['disk_unblock_events', 'block']
+['put_disk', 'block']
+['module_put', 'kernel']
+
+__clear_page_buffers: 
+['put_page', 'mm']
+
+ep_set_mstimeout: 
+['ktime_get_ts', 'kernel']
+['timespec_add_safe', 'kernel']
+
+signalfd_notify: 
+['__wake_up', 'kernel']
+
+__alloc_zeroed_user_highpage: 
+['alloc_pages_vma', 'mm']
+
+trace_writeback_bdi_unregister_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+register_trace_task_newtask: 
+['tracepoint_probe_register', 'kernel']
+
+trace_writeback_bdi_register_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+__pollwake: 
+['default_wake_function', 'kernel']
+['default_wake_function', 'kernel']
+
+wakeup_pipe_readers: 
+['__wake_up', 'kernel']
+
+freeze_super: 
+['down_write', 'kernel']
+['up_write', 'kernel']
+['up_write', 'kernel']
+['up_write', 'kernel']
+['down_write', 'kernel']
+['printk', 'kernel']
+['__wake_up', 'kernel']
+['up_write', 'kernel']
+
+ktime_to_ms: 
+['ns_to_timeval', 'kernel']
+
+generic_permission: 
+['inode_capable', 'kernel']
+['inode_capable', 'kernel']
+['inode_capable', 'kernel']
+
+__estimate_accuracy: 
+['task_nice', 'kernel']
+
+perf_trace_writeback_queue_io: 
+['perf_trace_buf_prepare', 'kernel']
+
+irq_set_chained_handler: 
+['__irq_set_handler', 'kernel']
+
+bioset_integrity_create: 
+['mempool_destroy', 'mm']
+
+unregister_trace_writeback_sb_inodes_requeue: 
+['tracepoint_probe_unregister', 'kernel']
+
+sys_vhangup: 
+['capable', 'kernel']
+
+fs_maxindex: 
+['_raw_read_lock', 'kernel']
+
+__bio_map_user_iov: 
+['get_user_pages_fast', 'mm']
+['put_page', 'mm']
+['kfree', 'mm']
+['put_page', 'mm']
+['kfree', 'mm']
+
+trace_task_rename_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+trace_writeback_wake_background_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+audit_log_capset: 
+['__audit_log_capset', 'kernel']
+
+list_lru_walk: 
+['list_lru_walk_node', 'mm']
+
+task_session_vnr: 
+['__task_pid_nr_ns', 'kernel']
+
+trace_block_unplug_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+unregister_trace_block_bio_backmerge: 
+['tracepoint_probe_unregister', 'kernel']
+
+trace_block_bio_frontmerge_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+blkdev_releasepage: 
+['generic_writepages', 'mm']
+['compat_blkdev_ioctl', 'block']
+['generic_file_mmap', 'mm']
+
+inode_owner_or_capable: 
+['inode_capable', 'kernel']
+
+__rsv_window_dump: 
+['printk', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+
+irq_get_msi_desc: 
+['irq_get_irq_data', 'kernel']
+
+proc_nr_dentry: 
+['proc_doulongvec_minmax', 'kernel']
+
+trace_sched_kthread_stop_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+eventfd_release: 
+['__wake_up', 'kernel']
+
+blkdev_fsync: 
+['filemap_write_and_wait_range', 'mm']
+['blkdev_issue_flush', 'block']
+
+grab_cache_page: 
+['find_or_create_page', 'mm']
+
+unregister_trace_block_bio_remap: 
+['tracepoint_probe_unregister', 'kernel']
+
+dcache_init: 
+['kmem_cache_create', 'mm']
+['alloc_large_system_hash', 'mm']
+
+load_aout_library: 
+['__printk_ratelimit', 'kernel']
+['printk', 'kernel']
+['vm_brk', 'mm']
+['vm_mmap', 'mm']
+['vm_brk', 'mm']
+
+wait_for_dump_helpers: 
+['__wake_up_sync', 'kernel']
+['prepare_to_wait_event', 'kernel']
+['abort_exclusive_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+ftrace_raw_event_writeback_dirty_page: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+put_user_ns: 
+['free_user_ns', 'kernel']
+
+register_chrdev_region: 
+['kfree', 'mm']
+
+setup_new_exec: 
+['flush_signal_handlers', 'kernel']
+
+register_trace_sched_process_wait: 
+['tracepoint_probe_register', 'kernel']
+
+seq_release_private: 
+['kfree', 'mm']
+
+restore_saved_sigmask: 
+['__set_current_blocked', 'kernel']
+
+compat_sys_ppoll: 
+['sigset_from_compat', 'kernel']
+['sigprocmask', 'kernel']
+['sigprocmask', 'kernel']
+
+cleancache_init_fs: 
+['__cleancache_init_fs', 'mm']
+
+set_binfmt: 
+['module_put', 'kernel']
+['__module_get', 'kernel']
+
+submit_bio_wait: 
+['submit_bio', 'block']
+['wait_for_completion', 'kernel']
+
+__sync_dirty_buffer: 
+['warn_slowpath_null', 'kernel']
+
+pipe_unlock: 
+['mutex_unlock', 'kernel']
+
+seq_read: 
+['mutex_lock', 'kernel']
+['kfree', 'mm']
+['mutex_unlock', 'kernel']
+
+init_bio: 
+['panic', 'kernel']
+['panic', 'kernel']
+['panic', 'kernel']
+['panic', 'kernel']
+
+ext2_xattr_set: 
+['kfree', 'mm']
+
+bio_find_or_create_slab: 
+['mutex_lock', 'kernel']
+['krealloc', 'mm']
+['kmem_cache_create', 'mm']
+['printk', 'kernel']
+['mutex_unlock', 'kernel']
+
+get_dcookie: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+bio_release_pages: 
+['put_page', 'mm']
+
+__fput: 
+['_cond_resched', 'kernel']
+['module_put', 'kernel']
+['put_pid', 'kernel']
+
+d_free: 
+['call_rcu_sched', 'kernel']
+
+sk_filter_release: 
+['call_rcu_sched', 'kernel']
+
+touch_atime: 
+['current_fs_time', 'kernel']
+
+bio_dirty_fn: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+d_materialise_unique: 
+['printk', 'kernel']
+
+alloc_dcookie: 
+['kmem_cache_alloc', 'mm']
+
+bdev_destroy_inode: 
+['call_rcu_sched', 'kernel']
+
+res_counter_reset_failcnt: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+__sync_blockdev: 
+['filemap_flush', 'mm']
+['filemap_write_and_wait', 'mm']
+
+fs_set_subtype: 
+['kstrdup', 'mm']
+
+sb_init_dio_done_wq: 
+['__alloc_workqueue_key', 'kernel']
+['destroy_workqueue', 'kernel']
+
+register_trace_sched_process_free: 
+['tracepoint_probe_register', 'kernel']
+
+sync_filesystem: 
+['warn_slowpath_null', 'kernel']
+
+mount_fs: 
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_fmt', 'kernel']
+['up_write', 'kernel']
+
+__pte_free_tlb: 
+['___pte_free_tlb', 'mm']
+
+try_to_writeback_inodes_sb_nr: 
+['down_read_trylock', 'kernel']
+['up_read', 'kernel']
+
+__alloc_pages: 
+['__alloc_pages_nodemask', 'mm']
+
+do_thaw_one: 
+['printk', 'kernel']
+['bdevname', 'block']
+
+i_gid_write: 
+['make_kgid', 'kernel']
+
+locks_mandatory_area: 
+['prepare_to_wait_event', 'kernel']
+['abort_exclusive_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+unmap_underlying_metadata: 
+['_cond_resched', 'kernel']
+
+eventfd_ctx_read: 
+['default_wake_function', 'kernel']
+['schedule', 'kernel']
+['__wake_up_locked_key', 'kernel']
+
+default_inquire_remote_apic: 
+['__inquire_remote_apic', 'kernel']
+
+free_pipe_info: 
+['__free_pages', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+static_key_slow_dec: 
+['warn_slowpath_fmt', 'kernel']
+
+try_to_free_buffers: 
+['cancel_dirty_page', 'mm']
+
+kmalloc_order: 
+['__get_free_pages', 'mm']
+
+ep_insert: 
+['kmem_cache_alloc', 'mm']
+['_raw_spin_lock_irqsave', 'kernel']
+['__wake_up_locked', 'kernel']
+['_raw_spin_lock_irqsave', 'kernel']
+['kmem_cache_free', 'mm']
+
+fdatawrite_one_bdev: 
+['filemap_fdatawrite', 'mm']
+
+sock_graft: 
+['_raw_write_lock_bh', 'kernel']
+['_raw_write_unlock_bh', 'kernel']
+
+jiffies_delta_to_clock_t: 
+['jiffies_to_clock_t', 'kernel']
+
+register_trace_block_rq_issue: 
+['tracepoint_probe_register', 'kernel']
+
+chrdev_show: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+sys_sync: 
+['laptop_sync_completion', 'mm']
+
+fcntl_init: 
+['kmem_cache_create', 'mm']
+
+sget: 
+['up_write', 'kernel']
+['up_write', 'kernel']
+['register_shrinker', 'mm']
+
+mempool_create_page_pool: 
+['mempool_create', 'mm']
+['mempool_alloc_pages', 'mm']
+['mempool_free_pages', 'mm']
+
+splice_pipe_to_pipe: 
+['send_sig', 'kernel']
+
+unregister_trace_writeback_pages_written: 
+['tracepoint_probe_unregister', 'kernel']
+
+deactivate_super: 
+['down_write', 'kernel']
+
+hrtimer_add_expires: 
+['ktime_add_safe', 'kernel']
+['ktime_add_safe', 'kernel']
+
+trace_global_dirty_state_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+schedule_work_on: 
+['queue_work_on', 'kernel']
+
+free_secdata: 
+['free_pages', 'mm']
+
+__register_chrdev_region: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+['kfree', 'mm']
+
+do_pselect: 
+['sigprocmask', 'kernel']
+['sigprocmask', 'kernel']
+
+trace_writeback_single_inode_start_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+free_vfsmnt: 
+['kfree', 'mm']
+['free_percpu', 'mm']
+['kmem_cache_free', 'mm']
+
+tasklet_hi_schedule_first: 
+['__tasklet_hi_schedule_first', 'kernel']
+
+ext2_xattr_set2: 
+['get_seconds', 'kernel']
+
+__bio_add_page: 
+['blk_recount_segments', 'block']
+
+rcu_read_unlock_bh: 
+['local_bh_enable', 'kernel']
+
+ftrace_raw_output_bdi_dirty_ratelimit: 
+['ftrace_raw_output_prep', 'kernel']
+['trace_seq_printf', 'kernel']
+
+compat_sys_fanotify_mark: 
+['proc_doulongvec_minmax', 'kernel']
+
+may_umount: 
+['down_read', 'kernel']
+['up_read', 'kernel']
+
+kern_path_locked: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+d_shrink_add: 
+['warn_slowpath_null', 'kernel']
+
+chmod_common: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+unregister_trace_block_plug: 
+['tracepoint_probe_unregister', 'kernel']
+
+unregister_trace_writeback_nowork: 
+['tracepoint_probe_unregister', 'kernel']
+
+aio_migratepage: 
+['_raw_spin_lock_irqsave', 'kernel']
+['migrate_page_move_mapping', 'mm']
+['put_page', 'mm']
+['_raw_spin_lock_irqsave', 'kernel']
+['migrate_page_copy', 'mm']
+['put_page', 'mm']
+['put_page', 'mm']
+
+kref_put_mutex: 
+['warn_slowpath_null', 'kernel']
+
+split_huge_page: 
+['split_huge_page_to_list', 'mm']
+
+irq_has_action: 
+['irq_to_desc', 'kernel']
+
+__write_seqlock_irqsave: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+ext2_ioctl: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['capable', 'kernel']
+['mutex_unlock', 'kernel']
+['get_seconds', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_lock', 'kernel']
+['get_seconds', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+writeback_inodes_sb_nr: 
+['warn_slowpath_null', 'kernel']
+['wait_for_completion', 'kernel']
+
+spin_lock_bh: 
+['_raw_spin_lock_bh', 'kernel']
+
+bvec_free: 
+['mempool_free', 'mm']
+['kmem_cache_free', 'mm']
+
+__mb_cache_entry_release_unlock: 
+['__wake_up', 'kernel']
+
+ext2_link: 
+['get_seconds', 'kernel']
+
+do_readv_writev: 
+['kfree', 'mm']
+
+add_page_to_lru_list: 
+['mem_cgroup_update_lru_size', 'mm']
+['__mod_zone_page_state', 'mm']
+
+SYSC_signalfd4: 
+['kfree', 'mm']
+
+locks_init_lock_heads: 
+['__init_waitqueue_head', 'kernel']
+
+unregister_trace_bdi_dirty_ratelimit: 
+['tracepoint_probe_unregister', 'kernel']
+
+buffer_io_error: 
+['printk', 'kernel']
+['bdevname', 'block']
+
+__find_get_block_slow: 
+['find_get_page', 'mm']
+['printk', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+['bdevname', 'block']
+['put_page', 'mm']
+
+alloc_vfsmnt: 
+['kstrdup', 'mm']
+['kfree', 'mm']
+['kmem_cache_free', 'mm']
+
+exit_task_work: 
+['task_work_run', 'kernel']
+
+C_SYSC_epoll_pwait: 
+['sigset_from_compat', 'kernel']
+['set_current_blocked', 'kernel']
+['set_current_blocked', 'kernel']
+
+kref_get: 
+['warn_slowpath_null', 'kernel']
+
+tracehook_report_syscall_exit: 
+['user_single_step_siginfo', 'kernel']
+['force_sig_info', 'kernel']
+
+device_lock: 
+['mutex_lock', 'kernel']
+
+register_trace_writeback_congestion_wait: 
+['tracepoint_probe_register', 'kernel']
+
+__remove_assoc_queue: 
+['warn_slowpath_null', 'kernel']
+
+dst_entries_add: 
+['local_bh_disable', 'kernel']
+['local_bh_enable', 'kernel']
+
+spin_trylock_irq: 
+['_raw_spin_trylock', 'kernel']
+
+simple_xattr_list: 
+['capable', 'kernel']
+
+generic_shutdown_super: 
+['destroy_workqueue', 'kernel']
+['printk', 'kernel']
+['up_write', 'kernel']
+
+inode_lru_isolate: 
+['warn_slowpath_null', 'kernel']
+
+bm_get_inode: 
+['current_fs_time', 'kernel']
+
+f_setown: 
+['find_vpid', 'kernel']
+
+blkdev_aio_write: 
+['blk_start_plug', 'block']
+['__generic_file_aio_write', 'mm']
+['blk_finish_plug', 'block']
+
+vtime_user_exit: 
+['vtime_account_user', 'kernel']
+
+create_entry: 
+['kfree', 'mm']
+['kfree', 'mm']
+
+compat_core_sys_select: 
+['kfree', 'mm']
+
+d_tmpfile: 
+['_raw_spin_lock', 'kernel']
+
+trace_wbc_writepage_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+ext2_find_shared: 
+['_raw_write_lock', 'kernel']
+
+page_cache_alloc_readahead: 
+['__page_cache_alloc', 'mm']
+
+dio_cleanup: 
+['put_page', 'mm']
+
+register_trace_block_bio_frontmerge: 
+['tracepoint_probe_register', 'kernel']
+
+make_bad_inode: 
+['current_fs_time', 'kernel']
+
+load_elf_fdpic_binary: 
+['send_sig', 'kernel']
+['printk', 'kernel']
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+['send_sig', 'kernel']
+
+locks_stop: 
+['lg_global_unlock', 'kernel']
+
+nobh_writepage: 
+['unlock_page', 'mm']
+
+trace_block_dirty_buffer_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+unregister_trace_block_rq_insert: 
+['tracepoint_probe_unregister', 'kernel']
+
+ep_free: 
+['mutex_lock', 'kernel']
+['_cond_resched', 'kernel']
+['mutex_lock', 'kernel']
+['_cond_resched', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+['free_uid', 'kernel']
+['kfree', 'mm']
+
+exec_mmap: 
+['mm_release', 'kernel']
+['sync_mm_rss', 'mm']
+['down_read', 'kernel']
+['up_read', 'kernel']
+['arch_pick_mmap_layout', 'mm']
+['up_read', 'kernel']
+['mm_update_next_owner', 'kernel']
+['mmput', 'kernel']
+
+eventfd_poll: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+register_trace_sched_wait_task: 
+['tracepoint_probe_register', 'kernel']
+
+bd_set_size: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+grab_super: 
+['down_write', 'kernel']
+['up_write', 'kernel']
+
+generic_add_lease: 
+['mutex_trylock', 'kernel']
+['mutex_unlock', 'kernel']
+['warn_slowpath_null', 'kernel']
+['mutex_unlock', 'kernel']
+
+unregister_trace_sched_wakeup: 
+['tracepoint_probe_unregister', 'kernel']
+
+unregister_trace_writeback_written: 
+['tracepoint_probe_unregister', 'kernel']
+
+end_buffer_async_write: 
+['printk', 'kernel']
+['bdevname', 'block']
+['end_page_writeback', 'mm']
+
+trace_block_touch_buffer_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+anon_pipe_buf_release: 
+['put_page', 'mm']
+
+put_mountpoint: 
+['kfree', 'mm']
+
+audit_getname: 
+['__audit_getname', 'kernel']
+
+copy_strings: 
+['_cond_resched', 'kernel']
+
+trace_writeback_pages_written_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+aio_setup_ring: 
+['find_or_create_page', 'mm']
+
+register_trace_wbc_writepage: 
+['tracepoint_probe_register', 'kernel']
+
+ext2_show_options: 
+['make_kuid', 'kernel']
+['from_kuid_munged', 'kernel']
+['make_kgid', 'kernel']
+['from_kgid_munged', 'kernel']
+
+touch_buffer: 
+['mark_page_accessed', 'mm']
+
+ext2_make_empty: 
+['unlock_page', 'mm']
+['put_page', 'mm']
+
+compat_sys_utimensat: 
+['get_compat_timespec', 'kernel']
+['get_compat_timespec', 'kernel']
+
+thaw_super: 
+['down_write', 'kernel']
+['up_write', 'kernel']
+['printk', 'kernel']
+['up_write', 'kernel']
+['__wake_up', 'kernel']
+
+cleancache_init_shared_fs: 
+['__cleancache_init_shared_fs', 'mm']
+
+unregister_trace_sched_stat_sleep: 
+['tracepoint_probe_unregister', 'kernel']
+
+fs_fully_visible: 
+['down_read', 'kernel']
+['up_read', 'kernel']
+
+flock_lock_file: 
+['_cond_resched', 'kernel']
+
+register_trace_sched_stat_sleep: 
+['tracepoint_probe_register', 'kernel']
+
+res_counter_set_limit: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+put_aio_ring_file: 
+['truncate_setsize', 'mm']
+
+unregister_trace_block_dirty_buffer: 
+['tracepoint_probe_unregister', 'kernel']
+
+freezable_schedule_unsafe: 
+['schedule', 'kernel']
+
+ioctl_fibmap: 
+['capable', 'kernel']
+
+dma_set_mask_and_coherent: 
+['dma_set_mask', 'kernel']
+
+irq_get_chip: 
+['irq_get_irq_data', 'kernel']
+
+perf_trace_writeback_dirty_inode_template: 
+['perf_trace_buf_prepare', 'kernel']
+
+cleancache_invalidate_inode: 
+['__cleancache_invalidate_inode', 'mm']
+
+unregister_trace_sched_process_free: 
+['tracepoint_probe_unregister', 'kernel']
+
+dst_entries_get_slow: 
+['local_bh_disable', 'kernel']
+['local_bh_enable', 'kernel']
+
+f_getowner_uids: 
+['_raw_read_lock', 'kernel']
+
+threadgroup_unlock: 
+['up_write', 'kernel']
+
+ext2_setsize: 
+['truncate_setsize', 'mm']
+['get_seconds', 'kernel']
+
+load_elf_binary: 
+['send_sig', 'kernel']
+['send_sig', 'kernel']
+['send_sig', 'kernel']
+['send_sig', 'kernel']
+['kfree', 'mm']
+['kfree', 'mm']
+['send_sig', 'kernel']
+['send_sig', 'kernel']
+['start_thread_ia32', 'kernel']
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+audit_log_string: 
+['audit_log_n_string', 'kernel']
+
+do_compat_pselect: 
+['sigset_from_compat', 'kernel']
+['sigprocmask', 'kernel']
+['sigprocmask', 'kernel']
+
+trace_sched_stat_iowait_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+unlock_rename: 
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+
+__d_move: 
+['printk', 'kernel']
+
+netif_tx_stop_queue: 
+['warn_slowpath_null', 'kernel']
+['printk', 'kernel']
+
+ktime_to_us: 
+['ns_to_timeval', 'kernel']
+
+audit_ipc_set_perm: 
+['__audit_ipc_set_perm', 'kernel']
+
+irq_gc_unlock: 
+['_raw_spin_unlock', 'kernel']
+
+queue_delayed_work: 
+['queue_delayed_work_on', 'kernel']
+
+res_counter_margin: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+security_free_mnt_opts: 
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+timespec_sub: 
+['set_normalized_timespec', 'kernel']
+
+timerfd_poll: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+iterate_dir: 
+['mutex_lock_killable', 'kernel']
+['mutex_unlock', 'kernel']
+
+trace_writeback_write_inode_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+bio_integrity_prep: 
+['printk', 'kernel']
+['printk', 'kernel']
+['kfree', 'mm']
+
+get_arg_page: 
+['get_user_pages', 'mm']
+
+signalfd_release: 
+['kfree', 'mm']
+
+lock_two_nondirectories: 
+['warn_slowpath_null', 'kernel']
+['mutex_lock', 'kernel']
+['warn_slowpath_null', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_lock', 'kernel']
+
+ep_poll: 
+['_raw_spin_lock_irqsave', 'kernel']
+['_raw_spin_lock_irqsave', 'kernel']
+['schedule_hrtimeout_range', 'kernel']
+['_raw_spin_lock_irqsave', 'kernel']
+
+register_filesystem: 
+['_raw_write_lock', 'kernel']
+
+generic_file_splice_write: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['balance_dirty_pages_ratelimited', 'mm']
+
+__getblk_slow: 
+['printk', 'kernel']
+['printk', 'kernel']
+
+unregister_trace_writeback_single_inode: 
+['tracepoint_probe_unregister', 'kernel']
+
+unregister_trace_writeback_wait: 
+['tracepoint_probe_unregister', 'kernel']
+
+SYSC_syncfs: 
+['down_read', 'kernel']
+['up_read', 'kernel']
+
+d_lru_shrink_move: 
+['warn_slowpath_null', 'kernel']
+
+block_write_full_page_endio: 
+['do_invalidatepage', 'mm']
+['unlock_page', 'mm']
+
+audit_ipc_obj: 
+['__audit_ipc_obj', 'kernel']
+
+prepend_path: 
+['warn_slowpath_fmt', 'kernel']
+
+setattr_copy: 
+['timespec_trunc', 'kernel']
+['timespec_trunc', 'kernel']
+['timespec_trunc', 'kernel']
+
+sk_del_node_init: 
+['warn_slowpath_null', 'kernel']
+
+fsnotify_oldname_init: 
+['kstrdup', 'mm']
+
+mempool_create_kmalloc_pool: 
+['mempool_create', 'mm']
+['mempool_kmalloc', 'mm']
+['mempool_kfree', 'mm']
+
+ep_alloc: 
+['__mutex_init', 'kernel']
+['__init_waitqueue_head', 'kernel']
+['__init_waitqueue_head', 'kernel']
+['free_uid', 'kernel']
+
+utimes_common: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+register_trace_block_plug: 
+['tracepoint_probe_register', 'kernel']
+
+do_blockdev_direct_IO: 
+['kmem_cache_alloc', 'mm']
+['mutex_lock', 'kernel']
+['filemap_write_and_wait_range', 'mm']
+['mutex_unlock', 'kernel']
+['kmem_cache_free', 'mm']
+['kmem_cache_free', 'mm']
+['blk_start_plug', 'block']
+['put_page', 'mm']
+['blk_finish_plug', 'block']
+['mutex_unlock', 'kernel']
+
+alloc_fdmem: 
+['vmalloc', 'mm']
+
+poll_freewait: 
+['free_pages', 'mm']
+
+SYSC_epoll_pwait: 
+['set_current_blocked', 'kernel']
+['set_current_blocked', 'kernel']
+
+perf_event_task_sched_out: 
+['__perf_event_task_sched_out', 'kernel']
+
+check_sticky: 
+['inode_capable', 'kernel']
+
+unregister_chrdev_region: 
+['kfree', 'mm']
+
+audit_inode_child: 
+['__audit_inode_child', 'kernel']
+
+ep_loop_check_proc: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+snmp_mib_free: 
+['free_percpu', 'mm']
+
+mark_buffer_dirty: 
+['warn_slowpath_null', 'kernel']
+['page_mapping', 'mm']
+
+trace_block_rq_requeue_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+__seq_open_private: 
+['kfree', 'mm']
+
+dio_bio_end_io: 
+['_raw_spin_lock_irqsave', 'kernel']
+['wake_up_process', 'kernel']
+
+sg_grt_trans: 
+['compat_alloc_user_space', 'kernel']
+
+filesystems_proc_show: 
+['_raw_read_lock', 'kernel']
+
+bpf_jit_dump: 
+['printk', 'kernel']
+
+vfs_getxattr_alloc: 
+['krealloc', 'mm']
+
+set_brk: 
+['vm_brk', 'mm']
+
+unregister_trace_writeback_bdi_register: 
+['tracepoint_probe_unregister', 'kernel']
+
+SYSC_sync_file_range: 
+['filemap_fdatawait_range', 'mm']
+['filemap_fdatawrite_range', 'mm']
+['filemap_fdatawait_range', 'mm']
+
+ftrace_raw_output_writeback_write_inode_template: 
+['ftrace_raw_output_prep', 'kernel']
+['trace_seq_printf', 'kernel']
+
+unregister_trace_writeback_queue: 
+['tracepoint_probe_unregister', 'kernel']
+
+elf_core_copy_task_fpregs: 
+['dump_fpu', 'kernel']
+
+putname: 
+['audit_putname', 'kernel']
+
+mnt_init: 
+['kmem_cache_create', 'mm']
+['__get_free_pages', 'mm']
+['__get_free_pages', 'mm']
+['panic', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+
+bio_integrity_free: 
+['kfree', 'mm']
+['mempool_free', 'mm']
+['kfree', 'mm']
+
+SYSC_mount: 
+['free_pages', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+register_trace_sched_process_hang: 
+['tracepoint_probe_register', 'kernel']
+
+copy_mount_options: 
+['__get_free_pages', 'mm']
+['free_pages', 'mm']
+
+trace_block_rq_complete_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+__copy_from_user_overflow: 
+['warn_slowpath_fmt', 'kernel']
+
+vma_adjust_trans_huge: 
+['__vma_adjust_trans_huge', 'mm']
+
+get_sb_block: 
+['printk', 'kernel']
+
+vtime_account_irq_enter: 
+['vtime_common_account_irq_enter', 'kernel']
+
+__register_chrdev: 
+['kfree', 'mm']
+
+load_elf_interp: 
+['vm_brk', 'mm']
+['kfree', 'mm']
+
+__reqsk_free: 
+['kmem_cache_free', 'mm']
+
+bprm_mm_init: 
+['mm_alloc', 'kernel']
+['init_new_context', 'kernel']
+
+inode_init_early: 
+['alloc_large_system_hash', 'mm']
+
+trace_writeback_dirty_inode_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+audit_reusename: 
+['__audit_reusename', 'kernel']
+
+register_trace_writeback_wake_background: 
+['tracepoint_probe_register', 'kernel']
+
+__read_seqlock_excl_irqsave: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+trace_writeback_queue_io_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+unregister_trace_writeback_queue_io: 
+['tracepoint_probe_unregister', 'kernel']
+
+lock_page_or_retry: 
+['_cond_resched', 'kernel']
+['__lock_page_or_retry', 'mm']
+
+SYSC_faccessat: 
+['prepare_creds', 'kernel']
+['override_creds', 'kernel']
+['revert_creds', 'kernel']
+
+get_super_thawed: 
+['up_read', 'kernel']
+['prepare_to_wait_event', 'kernel']
+['abort_exclusive_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+bio_alloc_pages: 
+['__free_pages', 'mm']
+
+expand_fdtable: 
+['call_rcu_sched', 'kernel']
+
+mb_cache_create: 
+['kmem_cache_create', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+ftrace_raw_output_writeback_class: 
+['ftrace_raw_output_prep', 'kernel']
+['trace_seq_printf', 'kernel']
+
+set_page_writeback: 
+['test_set_page_writeback', 'mm']
+
+__irq_set_chip_handler_name_locked: 
+['irq_to_desc', 'kernel']
+
+inode_init_always: 
+['__mutex_init', 'kernel']
+
+read_events: 
+['hrtimer_init_sleeper', 'kernel']
+['prepare_to_wait_event', 'kernel']
+['abort_exclusive_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+['hrtimer_cancel', 'kernel']
+
+trace_block_sleeprq_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+eventfd_write: 
+['default_wake_function', 'kernel']
+['schedule', 'kernel']
+['__wake_up_locked_key', 'kernel']
+
+audit_mq_sendrecv: 
+['__audit_mq_sendrecv', 'kernel']
+
+do_remount_sb: 
+['bdev_read_only', 'block']
+['acct_auto_close', 'kernel']
+['warn_slowpath_fmt', 'kernel']
+
+do_dentry_open: 
+['try_module_get', 'kernel']
+['warn_slowpath_null', 'kernel']
+['file_ra_state_init', 'mm']
+['module_put', 'kernel']
+
+blk_set_queue_congested: 
+['set_bdi_congested', 'mm']
+
+dcookie_unregister: 
+['mutex_lock', 'kernel']
+['kfree', 'mm']
+['mutex_unlock', 'kernel']
+
+tasklet_hi_schedule: 
+['__tasklet_hi_schedule', 'kernel']
+
+vfs_caches_init: 
+['kmem_cache_create', 'mm']
+
+namespace_unlock: 
+['up_write', 'kernel']
+['up_write', 'kernel']
+
+bio_integrity_tag: 
+['printk', 'kernel']
+
+page_cache_alloc_cold: 
+['__page_cache_alloc', 'mm']
+
+ptrace_report_syscall: 
+['ptrace_notify', 'kernel']
+
+irq_set_status_flags: 
+['irq_modify_status', 'kernel']
+
+perf_sw_event: 
+['__perf_sw_event', 'kernel']
+
+getxattr: 
+['vmalloc', 'mm']
+['vfree', 'mm']
+['kfree', 'mm']
+
+mb_cache_destroy: 
+['printk', 'kernel']
+['printk', 'kernel']
+['kmem_cache_destroy', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+cn_print_exe_file: 
+['kfree', 'mm']
+
+simple_readpage: 
+['unlock_page', 'mm']
+
+bio_advance: 
+['warn_slowpath_fmt', 'kernel']
+
+seq_lseek: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+ep_modify: 
+['__wake_up_locked', 'kernel']
+
+ioctl_fsthaw: 
+['capable', 'kernel']
+
+trace_block_getrq_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+seq_release: 
+['kfree', 'mm']
+['kfree', 'mm']
+
+kmalloc_node: 
+['kmem_cache_alloc_node_trace', 'mm']
+['__kmalloc_node', 'mm']
+
+ep_scan_ready_list: 
+['mutex_lock', 'kernel']
+['_raw_spin_lock_irqsave', 'kernel']
+['_raw_spin_lock_irqsave', 'kernel']
+['__wake_up_locked', 'kernel']
+['mutex_unlock', 'kernel']
+
+vtime_task_switch: 
+['vtime_common_task_switch', 'kernel']
+
+SYSC_getcwd: 
+['kmem_cache_alloc', 'mm']
+['kmem_cache_free', 'mm']
+
+mpage_bio_submit: 
+['submit_bio', 'block']
+
+register_trace_writeback_write_inode: 
+['tracepoint_probe_register', 'kernel']
+
+bvec_alloc: 
+['mempool_alloc', 'mm']
+['kmem_cache_alloc', 'mm']
+
+__writeback_single_inode: 
+['warn_slowpath_null', 'kernel']
+['do_writepages', 'mm']
+['filemap_fdatawait', 'mm']
+['mapping_tagged', 'mm']
+
+freezable_schedule_timeout_killable_unsafe: 
+['schedule_timeout_killable', 'kernel']
+
+bdev_inode_switch_bdi: 
+['bdi_lock_two', 'mm']
+['bdi_wakeup_thread_delayed', 'mm']
+
+fsync_buffers_list: 
+['blk_start_plug', 'block']
+['blk_finish_plug', 'block']
+
+__simple_xattr_set: 
+['kstrdup', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+mem_cgroup_end_update_page_stat: 
+['__mem_cgroup_end_update_page_stat', 'mm']
+
+res_counter_soft_limit_excess: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+mntput_no_expire: 
+['acct_auto_close_mnt', 'kernel']
+['warn_slowpath_null', 'kernel']
+['call_rcu_sched', 'kernel']
+
+kref_put_spinlock_irqsave: 
+['warn_slowpath_null', 'kernel']
+['_raw_spin_lock_irqsave', 'kernel']
+
+load_aout_binary: 
+['send_sig', 'kernel']
+['vm_brk', 'mm']
+['send_sig', 'kernel']
+['send_sig', 'kernel']
+['__printk_ratelimit', 'kernel']
+['printk', 'kernel']
+['__printk_ratelimit', 'kernel']
+['printk', 'kernel']
+['vm_brk', 'mm']
+['vm_mmap', 'mm']
+['send_sig', 'kernel']
+['send_sig', 'kernel']
+
+trace_sched_pi_setprio_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+perf_trace_buf_submit: 
+['perf_tp_event', 'kernel']
+
+sleep_on_buffer: 
+['io_schedule', 'kernel']
+
+fs_index: 
+['_raw_read_lock', 'kernel']
+
+__raw_spin_trylock_bh: 
+['local_bh_disable', 'kernel']
+['local_bh_enable_ip', 'kernel']
+
+inet_peer_refcheck: 
+['warn_slowpath_null', 'kernel']
+
+bio_disassociate_task: 
+['put_io_context', 'block']
+
+account_scheduler_latency: 
+['__account_scheduler_latency', 'kernel']
+
+do_close_on_exec: 
+['_cond_resched', 'kernel']
+
+__raw_write_unlock_bh: 
+['local_bh_enable_ip', 'kernel']
+
+xattr_permission: 
+['capable', 'kernel']
+
+ep_remove_wait_queue: 
+['remove_wait_queue', 'kernel']
+
+do_sys_name_to_handle: 
+['kfree', 'mm']
+
+mpol_put: 
+['__mpol_put', 'mm']
+
+check_disk_size_change: 
+['disk_name', 'block']
+['printk', 'kernel']
+
+audit_inode: 
+['__audit_inode', 'kernel']
+
+jump_label_rate_limit: 
+['warn_slowpath_fmt', 'kernel']
+
+m_stop: 
+['up_read', 'kernel']
+
+queue_work: 
+['queue_work_on', 'kernel']
+
+listxattr: 
+['vmalloc', 'mm']
+['vfree', 'mm']
+['kfree', 'mm']
+
+__d_alloc: 
+['kmem_cache_alloc', 'mm']
+['kmem_cache_free', 'mm']
+
+ioctl_by_bdev: 
+['blkdev_ioctl', 'block']
+
+vtime_account_irq_exit: 
+['vtime_gen_account_irq_exit', 'kernel']
+
+wake_up_partner: 
+['__wake_up', 'kernel']
+
+load_misc_binary: 
+['_raw_read_lock', 'kernel']
+
+ep_remove: 
+['_raw_spin_lock_irqsave', 'kernel']
+['call_rcu_sched', 'kernel']
+
+single_release: 
+['kfree', 'mm']
+
+put_files_struct: 
+['kmem_cache_free', 'mm']
+
+send_sigio_to_task: 
+['do_send_sig_info', 'kernel']
+['do_send_sig_info', 'kernel']
+
+kill_cad_pid: 
+['kill_pid', 'kernel']
+
+register_trace_writeback_dirty_inode_start: 
+['tracepoint_probe_register', 'kernel']
+
+ext2_get_blocks: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+
+bd_link_disk_holder: 
+['mutex_lock', 'kernel']
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_null', 'kernel']
+['kfree', 'mm']
+['mutex_unlock', 'kernel']
+
+synchronize_rcu: 
+['synchronize_sched', 'kernel']
+
+lease_modify: 
+['printk', 'kernel']
+
+SYSC_linkat: 
+['capable', 'kernel']
+
+trace_block_split_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+proc_nr_files: 
+['proc_doulongvec_minmax', 'kernel']
+
+ppp_gidle: 
+['compat_alloc_user_space', 'kernel']
+
+kiocb_set_cancel_fn: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+hd_struct_put: 
+['__delete_partition', 'block']
+
+wait_on_buffer: 
+['_cond_resched', 'kernel']
+
+register_trace_writeback_single_inode: 
+['tracepoint_probe_register', 'kernel']
+
+del_page_from_lru_list: 
+['mem_cgroup_update_lru_size', 'mm']
+['__mod_zone_page_state', 'mm']
+
+de_thread: 
+['zap_other_threads', 'kernel']
+['schedule', 'kernel']
+['_raw_write_lock_irq', 'kernel']
+['schedule', 'kernel']
+['change_pid', 'kernel']
+['transfer_pid', 'kernel']
+['transfer_pid', 'kernel']
+['__wake_up_parent', 'kernel']
+['release_task', 'kernel']
+['exit_itimers', 'kernel']
+['flush_itimer_signals', 'kernel']
+['kmem_cache_alloc', 'mm']
+['_raw_write_lock_irq', 'kernel']
+['__cleanup_sighand', 'kernel']
+['_raw_read_lock', 'kernel']
+
+generic_write_end: 
+['unlock_page', 'mm']
+['put_page', 'mm']
+
+kmalloc_array: 
+['__kmalloc', 'mm']
+
+unregister_trace_block_rq_issue: 
+['tracepoint_probe_unregister', 'kernel']
+
+unregister_trace_writeback_dirty_inode: 
+['tracepoint_probe_unregister', 'kernel']
+
+do_sync_work: 
+['printk', 'kernel']
+['kfree', 'mm']
+
+wait_sb_inodes: 
+['warn_slowpath_null', 'kernel']
+['filemap_fdatawait', 'mm']
+['_cond_resched', 'kernel']
+
+trace_sched_stat_wait_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+pipe_wait: 
+['autoremove_wake_function', 'kernel']
+['prepare_to_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+ftrace_raw_event_writeback_dirty_inode_template: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+put_filesystem: 
+['module_put', 'kernel']
+
+simple_link: 
+['current_kernel_time', 'kernel']
+
+unlock_system_sleep: 
+['mutex_unlock', 'kernel']
+
+setup_arg_pages: 
+['arch_align_stack', 'kernel']
+['down_write', 'kernel']
+['mprotect_fixup', 'mm']
+['expand_stack', 'mm']
+['up_write', 'kernel']
+
+ext2_delete_entry: 
+['get_seconds', 'kernel']
+
+register_trace_block_dirty_buffer: 
+['tracepoint_probe_register', 'kernel']
+
+blk_flush_plug: 
+['blk_flush_plug_list', 'block']
+
+block_read_full_page: 
+['warn_slowpath_null', 'kernel']
+['unlock_page', 'mm']
+
+unregister_filesystem: 
+['_raw_write_lock', 'kernel']
+
+unregister_trace_block_rq_requeue: 
+['tracepoint_probe_unregister', 'kernel']
+
+anon_inode_getfile: 
+['try_module_get', 'kernel']
+['module_put', 'kernel']
+
+unregister_trace_writeback_single_inode_start: 
+['tracepoint_probe_unregister', 'kernel']
+
+register_trace_sched_pi_setprio: 
+['tracepoint_probe_register', 'kernel']
+
+calc_reloc: 
+['printk', 'kernel']
+['send_sig', 'kernel']
+
+ftrace_raw_output_writeback_congest_waited_template: 
+['ftrace_raw_output_prep', 'kernel']
+['trace_seq_printf', 'kernel']
+
+wait_on_sync_kiocb: 
+['io_schedule', 'kernel']
+
+register_trace_sched_switch: 
+['tracepoint_probe_register', 'kernel']
+
+cleancache_invalidate_fs: 
+['__cleancache_invalidate_fs', 'mm']
+
+pipe_fcntl: 
+['capable', 'kernel']
+
+put_arg_page: 
+['put_page', 'mm']
+
+get_iovec_page_array: 
+['get_user_pages_fast', 'mm']
+
+free_part_info: 
+['kfree', 'mm']
+
+do_sys_poll: 
+['kfree', 'mm']
+
+register_trace_block_rq_abort: 
+['tracepoint_probe_register', 'kernel']
+
+show_state: 
+['show_state_filter', 'kernel']
+
+get_empty_filp: 
+['capable', 'kernel']
+['printk', 'kernel']
+
+do_thaw_all: 
+['kfree', 'mm']
+['printk', 'kernel']
+
+sync_inodes_sb: 
+['warn_slowpath_null', 'kernel']
+['wait_for_completion', 'kernel']
+
+iput_final: 
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_null', 'kernel']
+
+inode_sync_complete: 
+['wake_up_bit', 'kernel']
+
+timer_stats_timer_set_start_info: 
+['__timer_stats_timer_set_start_info', 'kernel']
+
+vfs_link: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+pipe_read: 
+['__wake_up_sync_key', 'kernel']
+['__wake_up_sync_key', 'kernel']
+
+__block_write_full_page: 
+['warn_slowpath_null', 'kernel']
+['redirty_page_for_writepage', 'mm']
+['unlock_page', 'mm']
+['end_page_writeback', 'mm']
+['unlock_page', 'mm']
+
+timerfd_setup: 
+['alarm_init', 'kernel']
+['hrtimer_init', 'kernel']
+['alarm_start', 'kernel']
+['alarm_start_relative', 'kernel']
+['hrtimer_start', 'kernel']
+
+fasync_remove_entry: 
+['call_rcu_sched', 'kernel']
+
+dio_init: 
+['kmem_cache_create', 'mm']
+
+do_emergency_remount: 
+['down_write', 'kernel']
+['up_write', 'kernel']
+['kfree', 'mm']
+['printk', 'kernel']
+
+audit_seccomp: 
+['__audit_seccomp', 'kernel']
+
+unregister_trace_writeback_wake_background: 
+['tracepoint_probe_unregister', 'kernel']
+
+shrink_dcache_parent: 
+['_cond_resched', 'kernel']
+
+aio_get_req: 
+['kmem_cache_alloc', 'mm']
+
+dir_relax: 
+['mutex_unlock', 'kernel']
+['mutex_lock', 'kernel']
+
+pgd_none_or_clear_bad: 
+['pgd_clear_bad', 'mm']
+
+register_trace_sched_stat_wait: 
+['tracepoint_probe_register', 'kernel']
+
+submit_page_section: 
+['put_page', 'mm']
+['put_page', 'mm']
+
+signalfd_cleanup: 
+['__wake_up', 'kernel']
+
+unregister_trace_block_getrq: 
+['tracepoint_probe_unregister', 'kernel']
+
+alloc_pages: 
+['alloc_pages_current', 'mm']
+
+free_bprm: 
+['abort_creds', 'kernel']
+['kfree', 'mm']
+['kfree', 'mm']
+
+SyS_ioprio_get: 
+['find_task_by_vpid', 'kernel']
+['find_vpid', 'kernel']
+['find_user', 'kernel']
+['free_uid', 'kernel']
+
+ssleep: 
+['msleep', 'kernel']
+
+hrtimer_set_expires_range_ns: 
+['ktime_add_safe', 'kernel']
+
+generic_cont_expand_simple: 
+['pagecache_write_begin', 'mm']
+['pagecache_write_end', 'mm']
+
+destroy_inodecache: 
+['rcu_barrier', 'kernel']
+['kmem_cache_destroy', 'mm']
+
+srcu_read_unlock: 
+['__srcu_read_unlock', 'kernel']
+
+tlb_remove_page: 
+['__tlb_remove_page', 'mm']
+['tlb_flush_mmu', 'mm']
+
+ext2_add_link: 
+['unlock_page', 'mm']
+['get_seconds', 'kernel']
+['unlock_page', 'mm']
+
+alloc_secdata: 
+['get_zeroed_page', 'mm']
+
+freezable_schedule: 
+['schedule', 'kernel']
+
+ext2_setup_super: 
+['get_seconds', 'kernel']
+
+audit_mq_open: 
+['__audit_mq_open', 'kernel']
+
+ftrace_define_fields_bdi_dirty_ratelimit: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+__clocksource_updatefreq_khz: 
+['__clocksource_updatefreq_scale', 'kernel']
+
+kfree_put_link: 
+['kfree', 'mm']
+
+unregister_trace_sched_process_fork: 
+['tracepoint_probe_unregister', 'kernel']
+
+blkdev_get_by_path: 
+['bdev_read_only', 'block']
+
+mount_subtree: 
+['down_write', 'kernel']
+
+reqsk_alloc: 
+['kmem_cache_alloc', 'mm']
+
+enable_irq_lockdep: 
+['enable_irq', 'kernel']
+
+task_nice_ioprio: 
+['task_nice', 'kernel']
+
+unlock_two_nondirectories: 
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+
+__pipe_lock: 
+['mutex_lock', 'kernel']
+
+fifo_open: 
+['__wake_up', 'kernel']
+['__wake_up', 'kernel']
+
+aio_setup: 
+['panic', 'kernel']
+['kmem_cache_create', 'mm']
+['kmem_cache_create', 'mm']
+
+_submit_bh: 
+['submit_bio', 'block']
+
+ftrace_raw_event_writeback_pages_written: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+SYSC_uselib: 
+['_raw_read_lock', 'kernel']
+['try_module_get', 'kernel']
+['_raw_read_lock', 'kernel']
+
+compat_printk: 
+['vprintk', 'kernel']
+
+pipe_release: 
+['__wake_up_sync_key', 'kernel']
+
+C_SYSC_vmsplice: 
+['compat_alloc_user_space', 'kernel']
+
+bdev_evict_inode: 
+['truncate_inode_pages', 'mm']
+
+unlock_mount: 
+['mutex_unlock', 'kernel']
+
+trace_block_bio_remap_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+do_video_set_spu_palette: 
+['compat_alloc_user_space', 'kernel']
+
+mem_cgroup_count_vm_event: 
+['__mem_cgroup_count_vm_event', 'mm']
+
+unregister_trace_balance_dirty_pages: 
+['tracepoint_probe_unregister', 'kernel']
+
+ftrace_raw_event_writeback_write_inode_template: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+fdatawait_one_bdev: 
+['filemap_fdatawait', 'mm']
+
+irq_set_chip_and_handler: 
+['irq_set_chip_and_handler_name', 'kernel']
+
+alloc_mnt_ns: 
+['kfree', 'mm']
+['__init_waitqueue_head', 'kernel']
+
+fs_name: 
+['_raw_read_lock', 'kernel']
+['try_module_get', 'kernel']
+
+bio_phys_segments: 
+['blk_recount_segments', 'block']
+
+perf_trace_bdi_dirty_ratelimit: 
+['perf_trace_buf_prepare', 'kernel']
+
+alloc_pipe_info: 
+['__init_waitqueue_head', 'kernel']
+['__mutex_init', 'kernel']
+['kfree', 'mm']
+
+block_truncate_page: 
+['warn_slowpath_null', 'kernel']
+['unlock_page', 'mm']
+['put_page', 'mm']
+
+put_filp: 
+['kmem_cache_create', 'mm']
+
+clocksource_register_khz: 
+['__clocksource_register_scale', 'kernel']
+
+kprojid_has_mapping: 
+['from_kprojid', 'kernel']
+
+inc_nlink: 
+['warn_slowpath_null', 'kernel']
+
+generic_block_fiemap: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+mountpoint_last: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+
+inode_dio_done: 
+['wake_up_bit', 'kernel']
+
+ext2_write_failed: 
+['truncate_pagecache', 'mm']
+
+lock_task_sighand: 
+['__lock_task_sighand', 'kernel']
+
+reqsk_queue_hash_req: 
+['_raw_write_lock', 'kernel']
+
+synchronize_rcu_bh_expedited: 
+['synchronize_sched_expedited', 'kernel']
+
+destroy_inode: 
+['call_rcu_sched', 'kernel']
+
+ioctl_fiemap: 
+['filemap_write_and_wait', 'mm']
+
+simple_attr_release: 
+['kfree', 'mm']
+
+handle_to_path: 
+['capable', 'kernel']
+['kfree', 'mm']
+
+ext2_acl_from_disk: 
+['make_kuid', 'kernel']
+['make_kgid', 'kernel']
+
+perf_trace_writeback_single_inode_template: 
+['perf_trace_buf_prepare', 'kernel']
+
+register_trace_block_rq_insert: 
+['tracepoint_probe_register', 'kernel']
+
+invalidate_remote_inode: 
+['invalidate_mapping_pages', 'mm']
+
+device_unlock: 
+['mutex_unlock', 'kernel']
+
+bio_free: 
+['mempool_free', 'mm']
+['kfree', 'mm']
+
+spin_lock_irq: 
+['_raw_spin_lock_irq', 'kernel']
+
+trace_sched_stat_sleep_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+SYSC_lookup_dcookie: 
+['capable', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['kfree', 'mm']
+['mutex_unlock', 'kernel']
+
+register_trace_block_bio_bounce: 
+['tracepoint_probe_register', 'kernel']
+
+register_trace_block_rq_requeue: 
+['tracepoint_probe_register', 'kernel']
+
+search_binary_handler: 
+['_raw_read_lock', 'kernel']
+['try_module_get', 'kernel']
+['_raw_read_lock', 'kernel']
+['__request_module', 'kernel']
+
+__page_symlink: 
+['pagecache_write_begin', 'mm']
+['pagecache_write_end', 'mm']
+
+do_timerfd_gettime: 
+['alarm_forward_now', 'kernel']
+['alarm_restart', 'kernel']
+['ns_to_timespec', 'kernel']
+['ns_to_timespec', 'kernel']
+
+anon_inode_init: 
+['panic', 'kernel']
+
+splice_to_pipe: 
+['send_sig', 'kernel']
+['__wake_up_sync', 'kernel']
+
+dio_refill_pages: 
+['get_user_pages_fast', 'mm']
+
+audit_ptrace: 
+['__audit_ptrace', 'kernel']
+
+timerfd_release: 
+['alarm_cancel', 'kernel']
+['hrtimer_cancel', 'kernel']
+
+print_ip_sym: 
+['printk', 'kernel']
+
+do_video_stillpicture: 
+['compat_alloc_user_space', 'kernel']
+
+ext2_fill_super: 
+['kfree', 'mm']
+['make_kuid', 'kernel']
+['make_kgid', 'kernel']
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+ftrace_raw_output_writeback_queue_io: 
+['ftrace_raw_output_prep', 'kernel']
+
+unregister_trace_block_rq_abort: 
+['tracepoint_probe_unregister', 'kernel']
+
+kgid_has_mapping: 
+['from_kgid', 'kernel']
+
+f_getown_ex: 
+['_raw_read_lock', 'kernel']
+['pid_vnr', 'kernel']
+['warn_slowpath_null', 'kernel']
+
+register_trace_writeback_nowork: 
+['tracepoint_probe_register', 'kernel']
+
+replace_mount_options: 
+['kfree', 'mm']
+
+kmalloc_large: 
+['kmalloc_order_trace', 'mm']
+
+rcu_virt_note_context_switch: 
+['rcu_note_context_switch', 'kernel']
+
+irq_set_noprobe: 
+['irq_modify_status', 'kernel']
+
+wait_on_page_locked_killable: 
+['wait_on_page_bit_killable', 'mm']
+
+__pmd_free_tlb: 
+['___pmd_free_tlb', 'mm']
+
+ext2_destroy_inode: 
+['call_rcu_sched', 'kernel']
+
+simple_attr_write: 
+['mutex_lock_interruptible', 'kernel']
+['mutex_unlock', 'kernel']
+
+bio_set_pages_dirty: 
+['set_page_dirty_lock', 'mm']
+
+free_mnt_ns: 
+['kfree', 'mm']
+
+put_dev_sector: 
+['put_page', 'mm']
+
+irq_balancing_disabled: 
+['irq_to_desc', 'kernel']
+
+fill_psinfo: 
+['task_nice', 'kernel']
+['from_kuid_munged', 'kernel']
+['from_kuid_munged', 'kernel']
+['from_kuid_munged', 'kernel']
+['from_kuid_munged', 'kernel']
+['from_kgid_munged', 'kernel']
+['from_kgid_munged', 'kernel']
+['from_kgid_munged', 'kernel']
+['from_kgid_munged', 'kernel']
+
+usermodehelper_enable: 
+['__usermodehelper_set_disable_depth', 'kernel']
+
+read_mapping_page: 
+['read_cache_page', 'mm']
+
+tracehook_signal_handler: 
+['ptrace_notify', 'kernel']
+
+drop_super: 
+['up_read', 'kernel']
+
+elf_fdpic_map_file_by_direct_mmap: 
+['vm_mmap', 'mm']
+['vm_mmap', 'mm']
+
+__sb_end_write: 
+['__wake_up', 'kernel']
+
+register_trace_writeback_queue: 
+['tracepoint_probe_register', 'kernel']
+
+srcu_read_lock: 
+['__srcu_read_lock', 'kernel']
+
+unregister_trace_sched_process_exit: 
+['tracepoint_probe_unregister', 'kernel']
+
+set_task_ioprio: 
+['get_task_io_context', 'block']
+['put_io_context', 'block']
+
+unregister_trace_sched_stat_blocked: 
+['tracepoint_probe_unregister', 'kernel']
+
+freezing: 
+['freezing_slow_path', 'kernel']
+
+eventpoll_init: 
+['si_meminfo', 'mm']
+['kmem_cache_create', 'mm']
+['kmem_cache_create', 'mm']
+
+register_trace_block_rq_remap: 
+['tracepoint_probe_register', 'kernel']
+
+vfs_mknod: 
+['capable', 'kernel']
+
+bio_check_pages_dirty: 
+['put_page', 'mm']
+['_raw_spin_lock_irqsave', 'kernel']
+
+register_trace_sched_process_exec: 
+['tracepoint_probe_register', 'kernel']
+
+atomic_open: 
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_null', 'kernel']
+
+poll_select_copy_remaining: 
+['ktime_get_ts', 'kernel']
+
+unregister_trace_writeback_start: 
+['tracepoint_probe_unregister', 'kernel']
+
+ftrace_raw_event_writeback_queue_io: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+i_uid_read: 
+['from_kuid', 'kernel']
+
+ftrace_define_fields_writeback_sb_inodes_requeue: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+unregister_trace_block_sleeprq: 
+['tracepoint_probe_unregister', 'kernel']
+
+kill_bdev: 
+['truncate_inode_pages', 'mm']
+
+vfs_removexattr: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+
+register_trace_task_rename: 
+['tracepoint_probe_register', 'kernel']
+
+task_pid_nr_ns: 
+['__task_pid_nr_ns', 'kernel']
+
+trace_sched_kthread_stop_ret_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+perf_trace_writeback_sb_inodes_requeue: 
+['perf_trace_buf_prepare', 'kernel']
+
+audit_bprm: 
+['__audit_bprm', 'kernel']
+
+register_trace_balance_dirty_pages: 
+['tracepoint_probe_register', 'kernel']
+
+ftrace_raw_output_writeback_pages_written: 
+['ftrace_raw_output_prep', 'kernel']
+['trace_seq_printf', 'kernel']
+
+link_pipe: 
+['send_sig', 'kernel']
+
+nla_put_msecs: 
+['jiffies_to_msecs', 'kernel']
+
+bio_integrity_alloc: 
+['mempool_alloc', 'mm']
+['mempool_free', 'mm']
+
+freeze_bdev: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+
+ep_poll_callback: 
+['_raw_spin_lock_irqsave', 'kernel']
+['__wake_up_locked', 'kernel']
+
+trace_block_rq_issue_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+namespace_lock: 
+['down_write', 'kernel']
+
+unregister_trace_writeback_exec: 
+['tracepoint_probe_unregister', 'kernel']
+
+eventfd_signal: 
+['_raw_spin_lock_irqsave', 'kernel']
+['__wake_up_locked_key', 'kernel']
+
+unregister_trace_sched_process_wait: 
+['tracepoint_probe_unregister', 'kernel']
+
+simple_xattrs_free: 
+['kfree', 'mm']
+['kfree', 'mm']
+
+lock_get_status: 
+['pid_vnr', 'kernel']
+
+alloc_fdtable: 
+['kfree', 'mm']
+
+init_mount_tree: 
+['panic', 'kernel']
+['panic', 'kernel']
+['panic', 'kernel']
+
+register_trace_block_touch_buffer: 
+['tracepoint_probe_register', 'kernel']
+
+traverse: 
+['kfree', 'mm']
+
+compat_ioctl_preallocate: 
+['compat_alloc_user_space', 'kernel']
+
+lookup_slow: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+count: 
+['_cond_resched', 'kernel']
+
+__pipe_unlock: 
+['mutex_unlock', 'kernel']
+
+init_waitqueue_entry: 
+['default_wake_function', 'kernel']
+
+alloc_file: 
+['warn_slowpath_null', 'kernel']
+
+__inode_dio_wait: 
+['bit_waitqueue', 'kernel']
+['wake_bit_function', 'kernel']
+['prepare_to_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+mount_pseudo: 
+['current_kernel_time', 'kernel']
+
+ext2_put_super: 
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+spin_unlock_bh: 
+['_raw_spin_unlock_bh', 'kernel']
+
+ext2_xattr_trusted_list: 
+['capable', 'kernel']
+
+posix_acl_fix_xattr_userns: 
+['make_kuid', 'kernel']
+['from_kuid', 'kernel']
+['make_kgid', 'kernel']
+['from_kgid', 'kernel']
+
+task_session_nr_ns: 
+['__task_pid_nr_ns', 'kernel']
+
+poll_select_set_timeout: 
+['ktime_get_ts', 'kernel']
+['timespec_add_safe', 'kernel']
+
+getname_flags: 
+['kmem_cache_alloc', 'mm']
+
+ptrace_unlink: 
+['__ptrace_unlink', 'kernel']
+
+fsnotify_oldname_free: 
+['kfree', 'mm']
+
+secure_computing: 
+['__secure_computing', 'kernel']
+
+block_write_begin: 
+['grab_cache_page_write_begin', 'mm']
+['unlock_page', 'mm']
+['put_page', 'mm']
+
+exiting_ack_irq: 
+['irq_exit', 'kernel']
+
+__touch_mnt_namespace: 
+['__wake_up', 'kernel']
+
+wait_on_atomic_t: 
+['out_of_line_wait_on_atomic_t', 'kernel']
+
+do_i2c_rdwr_ioctl: 
+['compat_alloc_user_space', 'kernel']
+
+locks_insert_global_locks: 
+['lg_local_lock', 'kernel']
+['lg_local_unlock', 'kernel']
+
+fill_thread_core_info: 
+['kfree', 'mm']
+
+clocksource_register_hz: 
+['__clocksource_register_scale', 'kernel']
+
+pagevec_release: 
+['__pagevec_release', 'mm']
+
+d_lru_add: 
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_null', 'kernel']
+
+disable_irq_lockdep: 
+['disable_irq', 'kernel']
+
+register_trace_writeback_bdi_register: 
+['tracepoint_probe_register', 'kernel']
+
+send_sigurg_to_task: 
+['do_send_sig_info', 'kernel']
+
+nla_get_msecs: 
+['msecs_to_jiffies', 'kernel']
+
+base_probe: 
+['__request_module', 'kernel']
+['__request_module', 'kernel']
+
+trace_writeback_nowork_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+mod_delayed_work: 
+['mod_delayed_work_on', 'kernel']
+
+task_pid_vnr: 
+['__task_pid_nr_ns', 'kernel']
+
+reqsk_queue_remove: 
+['warn_slowpath_null', 'kernel']
+
+lock_page_killable: 
+['_cond_resched', 'kernel']
+['__lock_page_killable', 'mm']
+
+drop_refcount: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+blkdev_write_end: 
+['unlock_page', 'mm']
+['put_page', 'mm']
+
+ext2_empty_dir: 
+['printk', 'kernel']
+
+freezable_schedule_timeout: 
+['schedule_timeout', 'kernel']
+
+__raw_spin_unlock_bh: 
+['local_bh_enable_ip', 'kernel']
+
+unregister_trace_block_touch_buffer: 
+['tracepoint_probe_unregister', 'kernel']
+
+perf_event_task_sched_in: 
+['__perf_event_task_sched_in', 'kernel']
+
+iov_iter_init: 
+['iov_iter_advance', 'mm']
+
+page_cache_pipe_buf_release: 
+['put_page', 'mm']
+
+audit_syscall_entry: 
+['__audit_syscall_entry', 'kernel']
+
+schedule_delayed_work_on: 
+['queue_delayed_work_on', 'kernel']
+
+unregister_trace_block_unplug: 
+['tracepoint_probe_unregister', 'kernel']
+
+set_cpus_allowed: 
+['set_cpus_allowed_ptr', 'kernel']
+
+free_more_memory: 
+['yield', 'kernel']
+['try_to_free_pages', 'mm']
+
+__get_fs_type: 
+['_raw_read_lock', 'kernel']
+['try_module_get', 'kernel']
+
+submit_bio_wait_endio: 
+['complete', 'kernel']
+
+kern_path_create: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+init_inodecache: 
+['kmem_cache_create', 'mm']
+
+kmalloc: 
+['kmem_cache_alloc_trace', 'mm']
+['__kmalloc', 'mm']
+
+register_trace_writeback_dirty_inode: 
+['tracepoint_probe_register', 'kernel']
+
+simple_empty: 
+['_raw_spin_lock', 'kernel']
+
+unregister_trace_writeback_bdi_unregister: 
+['tracepoint_probe_unregister', 'kernel']
+
+compat_do_readv_writev: 
+['kfree', 'mm']
+
+ep_take_care_of_epollwakeup: 
+['capable', 'kernel']
+
+__unregister_chrdev: 
+['kfree', 'mm']
+
+ftrace_raw_event_writeback_work_class: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+get_pipe_inode: 
+['current_kernel_time', 'kernel']
+
+free_poll_entry: 
+['remove_wait_queue', 'kernel']
+
+bio_alloc_map_data: 
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+mpol_cond_put: 
+['__mpol_put', 'mm']
+
+grow_dev_page: 
+['find_or_create_page', 'mm']
+['unlock_page', 'mm']
+['put_page', 'mm']
+
+SYSC_epoll_ctl: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+
+simple_rename: 
+['current_kernel_time', 'kernel']
+
+clear_inode: 
+['_cond_resched', 'kernel']
+
+page_readlink: 
+['put_page', 'mm']
+
+evict: 
+['truncate_inode_pages', 'mm']
+['wake_up_bit', 'kernel']
+
+perf_trace_writeback_class: 
+['perf_trace_buf_prepare', 'kernel']
+
+register_trace_writeback_written: 
+['tracepoint_probe_register', 'kernel']
+
+umount_collect: 
+['printk', 'kernel']
+
+may_linkat: 
+['capable', 'kernel']
+['audit_log_link_denied', 'kernel']
+
+trace_sched_stat_blocked_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+res_counter_reset_max: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+close_files: 
+['_cond_resched', 'kernel']
+
+mem_cgroup_inc_page_stat: 
+['mem_cgroup_update_page_stat', 'mm']
+
+aio_run_iocb: 
+['kfree', 'mm']
+
+unregister_trace_sched_switch: 
+['tracepoint_probe_unregister', 'kernel']
+
+pipe_to_file: 
+['pagecache_write_begin', 'mm']
+['pagecache_write_end', 'mm']
+
+setxattr: 
+['vmalloc', 'mm']
+['vfree', 'mm']
+['kfree', 'mm']
+
+vfs_xattr_cmp: 
+['kfree', 'mm']
+
+register_trace_writeback_pages_written: 
+['tracepoint_probe_register', 'kernel']
+
+ext2_commit_chunk: 
+['write_one_page', 'mm']
+['unlock_page', 'mm']
+
+should_remove_suid: 
+['capable', 'kernel']
+
+perf_trace_writeback_write_inode_template: 
+['perf_trace_buf_prepare', 'kernel']
+
+do_select: 
+['_cond_resched', 'kernel']
+
+kuid_has_mapping: 
+['from_kuid', 'kernel']
+
+register_trace_block_bio_queue: 
+['tracepoint_probe_register', 'kernel']
+
+cleancache_get_page: 
+['__cleancache_get_page', 'mm']
+
+timerfd_get_remaining: 
+['alarm_expires_remaining', 'kernel']
+
+register_trace_writeback_wait: 
+['tracepoint_probe_register', 'kernel']
+
+free_inode_nonrcu: 
+['kmem_cache_free', 'mm']
+
+unregister_trace_sched_kthread_stop: 
+['tracepoint_probe_unregister', 'kernel']
+
+trace_sched_stat_runtime_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+scm_set_cred: 
+['pid_vnr', 'kernel']
+
+dcache_init_early: 
+['alloc_large_system_hash', 'mm']
+
+page_cache_pipe_buf_steal: 
+['page_mapping', 'mm']
+['warn_slowpath_null', 'kernel']
+['try_to_release_page', 'mm']
+['remove_mapping', 'mm']
+['unlock_page', 'mm']
+
+task_pgrp_nr_ns: 
+['__task_pid_nr_ns', 'kernel']
+
+list_lru_count: 
+['list_lru_count_node', 'mm']
+
+do_i2c_smbus_ioctl: 
+['compat_alloc_user_space', 'kernel']
+
+posix_acl_to_xattr: 
+['from_kuid', 'kernel']
+['from_kgid', 'kernel']
+
+__raw_read_lock_bh: 
+['local_bh_disable', 'kernel']
+
+page_cache_pipe_buf_confirm: 
+['unlock_page', 'mm']
+['unlock_page', 'mm']
+
+timerfd_triggered: 
+['_raw_spin_lock_irqsave', 'kernel']
+['__wake_up_locked', 'kernel']
+
+write_inode_now: 
+['_cond_resched', 'kernel']
+
+register_trace_block_split: 
+['tracepoint_probe_register', 'kernel']
+
+trace_block_plug_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+revalidate_disk: 
+['bdget_disk', 'block']
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+tracepoint_synchronize_unregister: 
+['synchronize_sched', 'kernel']
+
+unregister_trace_block_bio_frontmerge: 
+['tracepoint_probe_unregister', 'kernel']
+
+disable_irq_nosync_lockdep: 
+['disable_irq_nosync', 'kernel']
+
+register_trace_bdi_dirty_ratelimit: 
+['tracepoint_probe_register', 'kernel']
+
+copy_fs_struct: 
+['kmem_cache_alloc', 'mm']
+
+init_once: 
+['__mutex_init', 'kernel']
+
+d_set_d_op: 
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_null', 'kernel']
+
+unregister_trace_writeback_congestion_wait: 
+['tracepoint_probe_unregister', 'kernel']
+
+do_rmdir: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+__getblk: 
+['_cond_resched', 'kernel']
+
+bdi_sched_wait: 
+['schedule', 'kernel']
+
+bio_copy_kern_endio: 
+['__free_pages', 'mm']
+
+check_submounts_and_drop: 
+['_cond_resched', 'kernel']
+
+register_trace_global_dirty_state: 
+['tracepoint_probe_register', 'kernel']
+
+threadgroup_change_end: 
+['up_read', 'kernel']
+
+poll_get_entry: 
+['__get_free_pages', 'mm']
+
+unregister_trace_block_rq_remap: 
+['tracepoint_probe_unregister', 'kernel']
+
+address_space_init_once: 
+['__mutex_init', 'kernel']
+
+invalidate_bdev: 
+['lru_add_drain_all', 'mm']
+['invalidate_mapping_pages', 'mm']
+
+register_trace_sched_wakeup_new: 
+['tracepoint_probe_register', 'kernel']
+
+fasync_alloc: 
+['kmem_cache_alloc', 'mm']
+
+read_mapping_page_async: 
+['read_cache_page_async', 'mm']
+
+audit_inode_parent_hidden: 
+['__audit_inode', 'kernel']
+
+__raw_read_unlock_bh: 
+['local_bh_enable_ip', 'kernel']
+
+set_task_comm: 
+['perf_event_comm', 'kernel']
+
+wb_check_old_data_flush: 
+['msecs_to_jiffies', 'kernel']
+
+alloc_inode: 
+['kmem_cache_alloc', 'mm']
+['kmem_cache_free', 'mm']
+
+bm_status_write: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+audit_syscall_exit: 
+['__audit_syscall_exit', 'kernel']
+
+eventfd_free_ctx: 
+['kfree', 'mm']
+
+create_elf_tables: 
+['arch_align_stack', 'kernel']
+
+memcg_memory_allocated_sub: 
+['res_counter_uncharge', 'kernel']
+
+audit_mq_notify: 
+['__audit_mq_notify', 'kernel']
+
+do_truncate: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+__pollwait: 
+['add_wait_queue', 'kernel']
+
+posix_test_lock: 
+['pid_vnr', 'kernel']
+
+irq_set_thread: 
+['irq_modify_status', 'kernel']
+
+elf_core_dump: 
+['get_dump_page', 'mm']
+['put_page', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+
+dynamic_irq_init: 
+['dynamic_irq_cleanup', 'kernel']
+
+flock_lock_file_wait: 
+['_cond_resched', 'kernel']
+['prepare_to_wait_event', 'kernel']
+['abort_exclusive_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+timespec_add: 
+['set_normalized_timespec', 'kernel']
+
+mm_match_cgroup: 
+['__mem_cgroup_same_or_subtree', 'mm']
+
+put_nsproxy: 
+['free_nsproxy', 'kernel']
+
+irq_get_handler_data: 
+['irq_get_irq_data', 'kernel']
+
+bio_alloc_rescue: 
+['generic_make_request', 'block']
+
+inode_wait: 
+['schedule', 'kernel']
+
+ftrace_raw_output_writeback_dirty_page: 
+['ftrace_raw_output_prep', 'kernel']
+['trace_seq_printf', 'kernel']
+
+trace_writeback_single_inode_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+mem_cgroup_dec_page_stat: 
+['mem_cgroup_update_page_stat', 'mm']
+
+default_file_splice_read: 
+['__free_pages', 'mm']
+['kfree', 'mm']
+['__free_pages', 'mm']
+
+kill_node: 
+['_raw_write_lock', 'kernel']
+
+unregister_trace_sched_stat_runtime: 
+['tracepoint_probe_unregister', 'kernel']
+
+perf_trace_writeback_work_class: 
+['perf_trace_buf_prepare', 'kernel']
+
+sg_ioctl_trans: 
+['compat_alloc_user_space', 'kernel']
+['compat_alloc_user_space', 'kernel']
+
+trace_writeback_wait_iff_congested_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+do_unlinkat: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+put_task_struct: 
+['__put_task_struct', 'kernel']
+
+free_dcookie: 
+['kmem_cache_free', 'mm']
+
+trace_writeback_queue_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+blk_schedule_flush_plug: 
+['blk_flush_plug_list', 'block']
+
+ext2_release_file: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+posix_acl_from_xattr: 
+['make_kuid', 'kernel']
+['make_kgid', 'kernel']
+
+perf_trace_wbc_class: 
+['perf_trace_buf_prepare', 'kernel']
+
+send_sigio: 
+['_raw_read_lock', 'kernel']
+['_raw_read_lock', 'kernel']
+
+simple_fill_super: 
+['current_kernel_time', 'kernel']
+['printk', 'kernel']
+['current_kernel_time', 'kernel']
+
+compat_SyS_timerfd_gettime: 
+['put_compat_itimerspec', 'kernel']
+
+d_lru_del: 
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_null', 'kernel']
+
+spin_lock: 
+['_raw_spin_lock', 'kernel']
+
+__relay_write: 
+['relay_switch_subbuf', 'kernel']
+
+posix_acl_clone: 
+['kmemdup', 'mm']
+
+check_disk_change: 
+['disk_clear_events', 'block']
+
+bioset_create: 
+['kfree', 'mm']
+['__alloc_workqueue_key', 'kernel']
+
+ftrace_define_fields_writeback_queue_io: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+bio_put_slab: 
+['mutex_lock', 'kernel']
+['warn_slowpath_fmt', 'kernel']
+['warn_slowpath_null', 'kernel']
+['kmem_cache_destroy', 'mm']
+['mutex_unlock', 'kernel']
+
+generic_acl_set: 
+['current_kernel_time', 'kernel']
+
+nobh_write_end: 
+['set_page_dirty', 'mm']
+['unlock_page', 'mm']
+['put_page', 'mm']
+
+trace_writeback_sb_inodes_requeue_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+writeback_single_inode: 
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_null', 'kernel']
+['mapping_tagged', 'mm']
+
+set_restore_sigmask: 
+['warn_slowpath_null', 'kernel']
+
+print_symbol: 
+['__print_symbol', 'kernel']
+
+grow_buffers: 
+['printk', 'kernel']
+['bdevname', 'block']
+
+locks_free_lock: 
+['kmem_cache_free', 'mm']
+
+f_modown: 
+['_raw_write_lock_irq', 'kernel']
+['put_pid', 'kernel']
+
+init_timer_on_stack_key: 
+['init_timer_key', 'kernel']
+
+cont_expand_zero: 
+['pagecache_write_begin', 'mm']
+['pagecache_write_end', 'mm']
+['balance_dirty_pages_ratelimited', 'mm']
+['pagecache_write_begin', 'mm']
+['pagecache_write_end', 'mm']
+
+bdev_alloc_inode: 
+['kmem_cache_alloc', 'mm']
+
+trace_sched_process_wait_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+__block_write_begin: 
+['warn_slowpath_null', 'kernel']
+
+register_trace_sched_migrate_task: 
+['tracepoint_probe_register', 'kernel']
+
+unregister_trace_task_newtask: 
+['tracepoint_probe_unregister', 'kernel']
+
+trace_writeback_congestion_wait_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+flush_old_exec: 
+['set_mm_exe_file', 'kernel']
+['flush_thread', 'kernel']
+
+tasklet_hrtimer_start: 
+['hrtimer_start', 'kernel']
+
+ppp_sock_fprog_ioctl_trans: 
+['compat_alloc_user_space', 'kernel']
+
+ext2_fsync: 
+['generic_file_aio_read', 'mm']
+['generic_file_aio_write', 'mm']
+['generic_file_mmap', 'mm']
+
+sk_nulls_del_node_init_rcu: 
+['warn_slowpath_null', 'kernel']
+
+kill_ioctx: 
+['warn_slowpath_null', 'kernel']
+['__wake_up', 'kernel']
+['vm_munmap', 'mm']
+
+freezable_schedule_timeout_interruptible: 
+['schedule_timeout_interruptible', 'kernel']
+
+set_notify_resume: 
+['kick_process', 'kernel']
+
+free_part_stats: 
+['free_percpu', 'mm']
+
+load_elf_library: 
+['vm_mmap', 'mm']
+['vm_brk', 'mm']
+['kfree', 'mm']
+
+irq_set_handler: 
+['__irq_set_handler', 'kernel']
+
+trace_sched_process_exit_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+new_mountpoint: 
+['kfree', 'mm']
+
+trace_sched_process_free_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+__mpage_writepage: 
+['unlock_page', 'mm']
+
+profile_hit: 
+['profile_hits', 'kernel']
+
+unregister_trace_writeback_dirty_page: 
+['tracepoint_probe_unregister', 'kernel']
+
+register_trace_block_rq_complete: 
+['tracepoint_probe_register', 'kernel']
+
+try_to_freeze_unsafe: 
+['_cond_resched', 'kernel']
+['__refrigerator', 'kernel']
+
+chroot_fs_refs: 
+['_raw_read_lock', 'kernel']
+
+elf_map: 
+['vm_mmap', 'mm']
+['vm_mmap', 'mm']
+
+bioset_free: 
+['destroy_workqueue', 'kernel']
+['mempool_destroy', 'mm']
+['mempool_destroy', 'mm']
+['kfree', 'mm']
+
+aio_read_events_ring: 
+['mutex_lock', 'kernel']
+
+destroy_super: 
+['warn_slowpath_null', 'kernel']
+['kfree', 'mm']
+['kfree', 'mm']
+
+drop_pagecache_sb: 
+['invalidate_mapping_pages', 'mm']
+
+lock_buffer: 
+['_cond_resched', 'kernel']
+
+unregister_trace_global_dirty_state: 
+['tracepoint_probe_unregister', 'kernel']
+
+entering_irq: 
+['irq_enter', 'kernel']
+['exit_idle', 'kernel']
+
+free_fs_struct: 
+['kmem_cache_free', 'mm']
+
+unregister_trace_block_split: 
+['tracepoint_probe_unregister', 'kernel']
+
+thaw_bdev: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+
+netif_addr_lock_nested: 
+['_raw_spin_lock', 'kernel']
+
+mount_bdev: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+['up_write', 'kernel']
+['down_write', 'kernel']
+['bdevname', 'block']
+
+create_elf_fdpic_tables: 
+['arch_align_stack', 'kernel']
+
+register_trace_writeback_start: 
+['tracepoint_probe_register', 'kernel']
+
+unregister_trace_block_bio_complete: 
+['tracepoint_probe_unregister', 'kernel']
+
+register_trace_sched_wakeup: 
+['tracepoint_probe_register', 'kernel']
+
+exit_aio: 
+['kfree', 'mm']
+
+coredump_finish: 
+['wake_up_process', 'kernel']
+
+ext2_rename: 
+['get_seconds', 'kernel']
+['get_seconds', 'kernel']
+['put_page', 'mm']
+['put_page', 'mm']
+['put_page', 'mm']
+
+aio_complete: 
+['wake_up_process', 'kernel']
+['_raw_spin_lock_irqsave', 'kernel']
+['_raw_spin_lock_irqsave', 'kernel']
+
+lock_system_sleep: 
+['mutex_lock', 'kernel']
+
+ext2_msg: 
+['printk', 'kernel']
+
+copy_mount_string: 
+['strndup_user', 'mm']
+
+irq_reserve_irq: 
+['irq_reserve_irqs', 'kernel']
+
+__brelse: 
+['warn_slowpath_fmt', 'kernel']
+
+ftrace_raw_event_writeback_sb_inodes_requeue: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+trace_sched_switch_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+ptrace_signal_wake_up: 
+['signal_wake_up_state', 'kernel']
+
+shift_arg_pages: 
+['find_vma', 'mm']
+['vma_adjust', 'mm']
+['move_page_tables', 'mm']
+['lru_add_drain', 'mm']
+['tlb_gather_mmu', 'mm']
+['tlb_finish_mmu', 'mm']
+['vma_adjust', 'mm']
+
+trace_sched_wakeup_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+wb_writeback: 
+['msecs_to_jiffies', 'kernel']
+
+always_dump_vma: 
+['arch_vma_name', 'mm']
+
+trace_block_bio_backmerge_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+file_update_time: 
+['current_fs_time', 'kernel']
+
+user_get_super: 
+['down_read', 'kernel']
+['up_read', 'kernel']
+
+coredump_wait: 
+['down_write', 'kernel']
+['up_write', 'kernel']
+['wait_for_completion', 'kernel']
+['wait_task_inactive', 'kernel']
+
+unregister_binfmt: 
+['_raw_write_lock', 'kernel']
+
+trace_sched_wakeup_new_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+SYSC_bdflush: 
+['capable', 'kernel']
+['printk', 'kernel']
+['do_exit', 'kernel']
+
+free_fdmem: 
+['vfree', 'mm']
+['kfree', 'mm']
+
+iterate_supers_type: 
+['down_read', 'kernel']
+['up_read', 'kernel']
+
+load_som_binary: 
+['kfree', 'mm']
+['kfree', 'mm']
+
+may_follow_link: 
+['audit_log_link_denied', 'kernel']
+
+timerfd_clock_was_set: 
+['ktime_get_monotonic_offset', 'kernel']
+
+dio_complete: 
+['kmem_cache_free', 'mm']
+
+disable_irq_nosync_lockdep_irqsave: 
+['disable_irq_nosync', 'kernel']
+
+mpol_equal: 
+['__mpol_equal', 'mm']
+
+lock_rename: 
+['mutex_lock', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_lock', 'kernel']
+['mutex_lock', 'kernel']
+
+trace_writeback_written_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+unregister_trace_task_rename: 
+['tracepoint_probe_unregister', 'kernel']
+
+lock_page: 
+['_cond_resched', 'kernel']
+['__lock_page', 'mm']
+
+spd_release_page: 
+['put_page', 'mm']
+
+unregister_trace_sched_process_hang: 
+['tracepoint_probe_unregister', 'kernel']
+
+audit_socketcall: 
+['__audit_socketcall', 'kernel']
+
+perf_trace_writeback_dirty_page: 
+['perf_trace_buf_prepare', 'kernel']
+
+map_som_binary: 
+['vm_mmap', 'mm']
+['vm_mmap', 'mm']
+['vm_mmap', 'mm']
+
+enable_irq_lockdep_irqrestore: 
+['enable_irq', 'kernel']
+
+bm_register_write: 
+['mutex_lock', 'kernel']
+['_raw_write_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['kfree', 'mm']
+
+perf_trace_balance_dirty_pages: 
+['perf_trace_buf_prepare', 'kernel']
+
+hrtimer_set_expires_range: 
+['ktime_add_safe', 'kernel']
+
+__wait_on_freeing_inode: 
+['wake_bit_function', 'kernel']
+['bit_waitqueue', 'kernel']
+['prepare_to_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+unregister_trace_writeback_write_inode_start: 
+['tracepoint_probe_unregister', 'kernel']
+
+scm_destroy_cred: 
+['put_pid', 'kernel']
+
+register_trace_block_bio_backmerge: 
+['tracepoint_probe_register', 'kernel']
+
+ptrace_event: 
+['ptrace_notify', 'kernel']
+
+send_sigurg: 
+['_raw_read_lock', 'kernel']
+['_raw_read_lock', 'kernel']
+
+unregister_trace_wbc_writepage: 
+['tracepoint_probe_unregister', 'kernel']
+
+cleancache_put_page: 
+['__cleancache_put_page', 'mm']
+
+netif_tx_disable: 
+['local_bh_disable', 'kernel']
+['local_bh_enable', 'kernel']
+
+fill_prstatus: 
+['thread_group_cputime', 'kernel']
+['task_cputime', 'kernel']
+
+generic_file_fsync: 
+['filemap_write_and_wait_range', 'mm']
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+fill_files_note: 
+['vmalloc', 'mm']
+['vfree', 'mm']
+
+pipe_write: 
+['send_sig', 'kernel']
+['send_sig', 'kernel']
+['__wake_up_sync_key', 'kernel']
+['__wake_up_sync_key', 'kernel']
+
+bdev_cache_init: 
+['kmem_cache_create', 'mm']
+['panic', 'kernel']
+['panic', 'kernel']
+
+ext2_evict_inode: 
+['truncate_inode_pages', 'mm']
+['get_seconds', 'kernel']
+['kfree', 'mm']
+
+__break_lease: 
+['prepare_to_wait_event', 'kernel']
+['abort_exclusive_wait', 'kernel']
+['schedule_timeout', 'kernel']
+['finish_wait', 'kernel']
+
+kref_sub: 
+['warn_slowpath_null', 'kernel']
+
+trace_task_newtask_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+pud_free: 
+['free_pages', 'mm']
+
+ftrace_function_local_disabled: 
+['warn_slowpath_null', 'kernel']
+
+simple_write_begin: 
+['grab_cache_page_write_begin', 'mm']
+
+requeue_inode: 
+['mapping_tagged', 'mm']
+
+ext2_get_branch: 
+['_raw_read_lock', 'kernel']
+
+file_free: 
+['call_rcu_sched', 'kernel']
+
+trace_writeback_wait_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+timerfd_read: 
+['autoremove_wake_function', 'kernel']
+['schedule', 'kernel']
+['alarm_forward_now', 'kernel']
+['alarm_restart', 'kernel']
+
+mounts_open_common: 
+['kfree', 'mm']
+
+threadgroup_change_begin: 
+['down_read', 'kernel']
+
+install_exec_creds: 
+['commit_creds', 'kernel']
+
+ext2_acl_to_disk: 
+['from_kuid', 'kernel']
+['from_kgid', 'kernel']
+['kfree', 'mm']
+
+unlock_buffer: 
+['wake_up_bit', 'kernel']
+
+ftrace_define_fields_wbc_class: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+register_trace_writeback_dirty_page: 
+['tracepoint_probe_register', 'kernel']
+
+shrink_dcache_for_umount: 
+['down_read_trylock', 'kernel']
+['_cond_resched', 'kernel']
+['_cond_resched', 'kernel']
+
+poll_schedule_timeout: 
+['schedule_hrtimeout_range', 'kernel']
+
+irq_set_probe: 
+['irq_modify_status', 'kernel']
+
+ftrace_raw_output_writeback_single_inode_template: 
+['ftrace_raw_output_prep', 'kernel']
+
+spin_unlock_irqrestore: 
+['_raw_spin_unlock_irqrestore', 'kernel']
+
+dcookie_register: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['kfree', 'mm']
+
+spin_trylock_bh: 
+['_raw_spin_trylock_bh', 'kernel']
+
+register_trace_sched_stat_runtime: 
+['tracepoint_probe_register', 'kernel']
+
+opipe_prep: 
+['send_sig', 'kernel']
+
+spin_trylock: 
+['_raw_spin_trylock', 'kernel']
+
+register_trace_block_sleeprq: 
+['tracepoint_probe_register', 'kernel']
+
+bio_integrity_init: 
+['__alloc_workqueue_key', 'kernel']
+['panic', 'kernel']
+['kmem_cache_create', 'mm']
+['panic', 'kernel']
+
+wait_on_page_writeback: 
+['wait_on_page_bit', 'mm']
+
+splice_shrink_spd: 
+['kfree', 'mm']
+['kfree', 'mm']
+
+reqsk_queue_unlink: 
+['_raw_write_lock', 'kernel']
+
+hrtimer_init_on_stack: 
+['hrtimer_init', 'kernel']
+
+buffer_init: 
+['kmem_cache_create', 'mm']
+['nr_free_buffer_pages', 'mm']
+['register_cpu_notifier', 'kernel']
+
+simple_transaction_get: 
+['get_zeroed_page', 'mm']
+['free_pages', 'mm']
+
+ftrace_raw_output_writeback_work_class: 
+['ftrace_raw_output_prep', 'kernel']
+
+cleancache_invalidate_page: 
+['__cleancache_invalidate_page', 'mm']
+
+tasklet_hrtimer_cancel: 
+['hrtimer_cancel', 'kernel']
+['tasklet_kill', 'kernel']
+
+static_key_slow_inc: 
+['warn_slowpath_fmt', 'kernel']
+
+ftrace_define_fields_writeback_write_inode_template: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+__d_unalias: 
+['mutex_trylock', 'kernel']
+['mutex_trylock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+
+default_llseek: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+register_nosave_region: 
+['__register_nosave_region', 'kernel']
+
+vfs_unlink: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+unregister_trace_sched_stat_wait: 
+['tracepoint_probe_unregister', 'kernel']
+
+nobh_truncate_page: 
+['unlock_page', 'mm']
+['put_page', 'mm']
+['put_page', 'mm']
+['set_page_dirty', 'mm']
+['unlock_page', 'mm']
+['put_page', 'mm']
+
+__unregister_chrdev_region: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+signalfd_dequeue: 
+['default_wake_function', 'kernel']
+['dequeue_signal', 'kernel']
+['dequeue_signal', 'kernel']
+['schedule', 'kernel']
+
+register_trace_block_bio_remap: 
+['tracepoint_probe_register', 'kernel']
+
+dst_metric: 
+['warn_slowpath_null', 'kernel']
+
+audit_mmap_fd: 
+['__audit_mmap_fd', 'kernel']
+
+select_estimate_accuracy: 
+['ktime_get_ts', 'kernel']
+
+pgdat_resize_lock: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+get_filesystem_list: 
+['_raw_read_lock', 'kernel']
+
+sb_issue_zeroout: 
+['blkdev_issue_zeroout', 'block']
+
+freezable_schedule_hrtimeout_range: 
+['schedule_hrtimeout_range', 'kernel']
+
+page_put_link: 
+['put_page', 'mm']
+
+ext2_set_link: 
+['get_seconds', 'kernel']
+
+init_special_inode: 
+['printk', 'kernel']
+
+pipe_set_size: 
+['kfree', 'mm']
+
+ftrace_raw_output_global_dirty_state: 
+['ftrace_raw_output_prep', 'kernel']
+['trace_seq_printf', 'kernel']
+
+simple_setattr: 
+['truncate_setsize', 'mm']
+
+__free_fdtable: 
+['kfree', 'mm']
+
+tasklet_schedule: 
+['__tasklet_schedule', 'kernel']
+
+cdev_get: 
+['try_module_get', 'kernel']
+['module_put', 'kernel']
+
+ext2_remount: 
+['get_seconds', 'kernel']
+
+trace_writeback_exec_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+wait_on_inode: 
+['_cond_resched', 'kernel']
+
+hrtimer_forward_now: 
+['hrtimer_forward', 'kernel']
+
+ftrace_define_fields_writeback_work_class: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+follow_link: 
+['_cond_resched', 'kernel']
+
+pmd_alloc_one: 
+['__free_pages', 'mm']
+
+unregister_trace_sched_kthread_stop_ret: 
+['tracepoint_probe_unregister', 'kernel']
+
+load_flat_file: 
+['printk', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+['printk', 'kernel']
+['vm_mmap', 'mm']
+['printk', 'kernel']
+['vm_mmap', 'mm']
+['printk', 'kernel']
+['vm_munmap', 'mm']
+['printk', 'kernel']
+['vm_munmap', 'mm']
+['vm_munmap', 'mm']
+['vm_mmap', 'mm']
+['printk', 'kernel']
+['printk', 'kernel']
+['vm_munmap', 'mm']
+['printk', 'kernel']
+['printk', 'kernel']
+
+free_buffer_head: 
+['kmem_cache_free', 'mm']
+
+ftrace_raw_event_writeback_single_inode_template: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+unregister_trace_sched_stat_iowait: 
+['tracepoint_probe_unregister', 'kernel']
+
+blkdev_get: 
+['warn_slowpath_null', 'kernel']
+['mutex_lock', 'kernel']
+['wake_up_bit', 'kernel']
+['disk_block_events', 'block']
+['mutex_unlock', 'kernel']
+
+get_super: 
+['down_read', 'kernel']
+['up_read', 'kernel']
+
+trace_sched_process_hang_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+bdi_writeback_workfn: 
+['set_worker_desc', 'kernel']
+['current_is_workqueue_rescuer', 'kernel']
+
+audit_sockaddr: 
+['__audit_sockaddr', 'kernel']
+
+__raw_spin_lock_bh: 
+['local_bh_disable', 'kernel']
+
+nobh_write_begin: 
+['grab_cache_page_write_begin', 'mm']
+['unlock_page', 'mm']
+['put_page', 'mm']
+
+i_gid_read: 
+['from_kgid', 'kernel']
+
+register_trace_writeback_exec: 
+['tracepoint_probe_register', 'kernel']
+
+block_ioctl: 
+['blkdev_ioctl', 'block']
+
+trace_block_rq_remap_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+device_trylock: 
+['mutex_trylock', 'kernel']
+
+filp_close: 
+['printk', 'kernel']
+
+do_mpage_readpage: 
+['unlock_page', 'mm']
+['unlock_page', 'mm']
+
+trace_writeback_write_inode_start_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+__sb_start_write: 
+['prepare_to_wait_event', 'kernel']
+['abort_exclusive_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+relay_write: 
+['relay_switch_subbuf', 'kernel']
+
+blkdev_put: 
+['mutex_lock', 'kernel']
+['warn_slowpath_null', 'kernel']
+['warn_slowpath_null', 'kernel']
+['disk_unblock_events', 'block']
+['disk_flush_events', 'block']
+['mutex_unlock', 'kernel']
+
+__pud_free_tlb: 
+['___pud_free_tlb', 'mm']
+
+unregister_trace_sched_process_exec: 
+['tracepoint_probe_unregister', 'kernel']
+
+cond_resched_rcu: 
+['_cond_resched', 'kernel']
+
+dio_await_one: 
+['_raw_spin_lock_irqsave', 'kernel']
+['io_schedule', 'kernel']
+['_raw_spin_lock_irqsave', 'kernel']
+
+pmd_free: 
+['free_pages', 'mm']
+
+ftrace_raw_event_writeback_class: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+bm_entry_read: 
+['__get_free_pages', 'mm']
+['free_pages', 'mm']
+
+flush_disk: 
+['disk_name', 'block']
+['printk', 'kernel']
+
+ftrace_raw_event_bdi_dirty_ratelimit: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+register_trace_block_unplug: 
+['tracepoint_probe_register', 'kernel']
+
+first_zones_zonelist: 
+['next_zones_zonelist', 'mm']
+
+over_bground_thresh: 
+['global_dirty_limits', 'mm']
+['bdi_dirty_limit', 'mm']
+
+__blkdev_put: 
+['mutex_lock', 'kernel']
+['warn_slowpath_null', 'kernel']
+['put_disk', 'block']
+['module_put', 'kernel']
+['mutex_unlock', 'kernel']
+
+dcookie_exit: 
+['kfree', 'mm']
+['kmem_cache_destroy', 'mm']
+
+get_filesystem: 
+['__module_get', 'kernel']
+
+alloc_super: 
+['__init_waitqueue_head', 'kernel']
+['__init_waitqueue_head', 'kernel']
+['__init_rwsem', 'kernel']
+['down_write', 'kernel']
+['__mutex_init', 'kernel']
+['__mutex_init', 'kernel']
+['__mutex_init', 'kernel']
+['__init_rwsem', 'kernel']
+
+__irq_set_handler_locked: 
+['irq_to_desc', 'kernel']
+
+single_open_size: 
+['kfree', 'mm']
+
+inode_init: 
+['kmem_cache_create', 'mm']
+['alloc_large_system_hash', 'mm']
+
+register_trace_writeback_queue_io: 
+['tracepoint_probe_register', 'kernel']
+
+unregister_trace_block_bio_queue: 
+['tracepoint_probe_unregister', 'kernel']
+
+free_note_info: 
+['warn_slowpath_null', 'kernel']
+['kfree', 'mm']
+['kfree', 'mm']
+['kfree', 'mm']
+['vfree', 'mm']
+
+relay_reserve: 
+['relay_switch_subbuf', 'kernel']
+
+dst_metric_rtt: 
+['msecs_to_jiffies', 'kernel']
+
+pte_free: 
+['__free_pages', 'mm']
+
+irq_set_nothread: 
+['irq_modify_status', 'kernel']
+
+unregister_trace_sched_wakeup_new: 
+['tracepoint_probe_unregister', 'kernel']
+
+move_expired_inodes: 
+['warn_slowpath_null', 'kernel']
+
+unregister_trace_sched_wait_task: 
+['tracepoint_probe_unregister', 'kernel']
+
+put_cred: 
+['__put_cred', 'kernel']
+
+chown_common: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+do_direct_IO: 
+['put_page', 'mm']
+['put_page', 'mm']
+['put_page', 'mm']
+['put_page', 'mm']
+['put_page', 'mm']
+
+trace_writeback_start_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+final_putname: 
+['kmem_cache_free', 'mm']
+['kfree', 'mm']
+['kmem_cache_free', 'mm']
+
+lookup_one_len: 
+['warn_slowpath_null', 'kernel']
+
+trace_writeback_dirty_inode_start_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+done_path_create: 
+['mutex_unlock', 'kernel']
+
+chrdev_open: 
+['try_module_get', 'kernel']
+['module_put', 'kernel']
+
+mempool_create_slab_pool: 
+['mempool_create', 'mm']
+['mempool_alloc_slab', 'mm']
+['mempool_free_slab', 'mm']
+
+claim_dma_lock: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+dcache_dir_lseek: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['_raw_spin_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+kmem_cache_zalloc: 
+['kmem_cache_alloc', 'mm']
+
+blkdev_aio_read: 
+['generic_file_aio_read', 'mm']
+
+ftrace_raw_event_wbc_class: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+lock_mount: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+['mutex_unlock', 'kernel']
+
+__generic_block_fiemap: 
+['_cond_resched', 'kernel']
+
+expand_corename: 
+['krealloc', 'mm']
+['ksize', 'mm']
+
+res_counter_set_soft_limit: 
+['_raw_spin_lock_irqsave', 'kernel']
+
+register_trace_writeback_single_inode_start: 
+['tracepoint_probe_register', 'kernel']
+
+vfs_rename_dir: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+ioctx_add_table: 
+['kfree', 'mm']
+
+ioc_task_link: 
+['warn_slowpath_null', 'kernel']
+
+cdev_put: 
+['module_put', 'kernel']
+
+kmap: 
+['_cond_resched', 'kernel']
+
+simple_write_end: 
+['set_page_dirty', 'mm']
+['unlock_page', 'mm']
+['put_page', 'mm']
+
+bm_entry_write: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+__destroy_inode: 
+['warn_slowpath_null', 'kernel']
+
+irq_gc_lock: 
+['_raw_spin_lock', 'kernel']
+
+page_cache_alloc: 
+['__page_cache_alloc', 'mm']
+
+__d_free: 
+['warn_slowpath_null', 'kernel']
+
+ep_show_fdinfo: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+__inode_wait_for_writeback: 
+['wake_bit_function', 'kernel']
+['bit_waitqueue', 'kernel']
+['__wait_on_bit', 'kernel']
+
+register_trace_sched_stat_blocked: 
+['tracepoint_probe_register', 'kernel']
+
+register_nosave_region_late: 
+['__register_nosave_region', 'kernel']
+
+touch_mnt_namespace: 
+['__wake_up', 'kernel']
+
+simple_attr_read: 
+['mutex_lock_interruptible', 'kernel']
+['mutex_unlock', 'kernel']
+
+dio_bio_end_aio: 
+['_raw_spin_lock_irqsave', 'kernel']
+['wake_up_process', 'kernel']
+
+register_trace_sched_process_exit: 
+['tracepoint_probe_register', 'kernel']
+
+ep_ptable_queue_proc: 
+['kmem_cache_alloc', 'mm']
+['add_wait_queue', 'kernel']
+
+generic_pipe_buf_release: 
+['put_page', 'mm']
+
+dio_bio_complete: 
+['set_page_dirty_lock', 'mm']
+['put_page', 'mm']
+
+init_mbcache: 
+['register_shrinker', 'mm']
+
+kill_block_super: 
+['warn_slowpath_null', 'kernel']
+
+ftrace_raw_event_writeback_congest_waited_template: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+unregister_trace_writeback_wait_iff_congested: 
+['tracepoint_probe_unregister', 'kernel']
+
+trace_bdi_dirty_ratelimit_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+d_validate: 
+['_raw_spin_lock', 'kernel']
+
+eventpoll_release_file: 
+['mutex_lock', 'kernel']
+
+add_to_page_cache: 
+['add_to_page_cache_locked', 'mm']
+
+eventfd_file_create: 
+['__init_waitqueue_head', 'kernel']
+
+__bio_copy_iov: 
+['__free_pages', 'mm']
+
+ftrace_define_fields_balance_dirty_pages: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+ext2_quota_write: 
+['current_kernel_time', 'kernel']
+
+register_trace_sched_stat_iowait: 
+['tracepoint_probe_register', 'kernel']
+
+ftrace_function_local_disable: 
+['warn_slowpath_null', 'kernel']
+
+compat_sys_io_getevents: 
+['get_compat_timespec', 'kernel']
+['compat_alloc_user_space', 'kernel']
+
+static_key_slow_dec_deferred: 
+['warn_slowpath_fmt', 'kernel']
+['static_key_slow_dec', 'kernel']
+
+prepare_bprm_creds: 
+['prepare_exec_creds', 'kernel']
+
+__ext2_write_inode: 
+['printk', 'kernel']
+
+linear_page_index: 
+['linear_hugepage_index', 'mm']
+
+dma_free_attrs: 
+['warn_slowpath_null', 'kernel']
+
+ftrace_function_local_enable: 
+['warn_slowpath_null', 'kernel']
+
+threadgroup_lock: 
+['down_write', 'kernel']
+
+drop_nlink: 
+['warn_slowpath_null', 'kernel']
+
+unregister_trace_block_bio_bounce: 
+['tracepoint_probe_unregister', 'kernel']
+
+trace_block_bio_bounce_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+perf_trace_global_dirty_state: 
+['perf_trace_buf_prepare', 'kernel']
+
+ext2_sync_super: 
+['get_seconds', 'kernel']
+
+irq_free_desc: 
+['irq_free_descs', 'kernel']
+
+ext2_splice_branch: 
+['get_seconds', 'kernel']
+
+do_remount: 
+['down_write', 'kernel']
+['capable', 'kernel']
+['up_write', 'kernel']
+
+ppp_scompress: 
+['compat_alloc_user_space', 'kernel']
+
+unregister_trace_sched_pi_setprio: 
+['tracepoint_probe_unregister', 'kernel']
+
+posix_acl_permission: 
+['in_group_p', 'kernel']
+['in_group_p', 'kernel']
+
+fput: 
+['task_work_add', 'kernel']
+
+signal_wake_up: 
+['signal_wake_up_state', 'kernel']
+
+SYSC_ioprio_set: 
+['capable', 'kernel']
+['find_task_by_vpid', 'kernel']
+['find_vpid', 'kernel']
+['find_user', 'kernel']
+['free_uid', 'kernel']
+
+ftrace_define_fields_writeback_single_inode_template: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+filelock_init: 
+['kmem_cache_create', 'mm']
+['lg_lock_init', 'kernel']
+
+audit_fd_pair: 
+['__audit_fd_pair', 'kernel']
+
+mpage_writepages: 
+['blk_start_plug', 'block']
+['generic_writepages', 'mm']
+['write_cache_pages', 'mm']
+['blk_finish_plug', 'block']
+
+trace_sched_wait_task_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+pte_free_kernel: 
+['free_pages', 'mm']
+
+mem_cgroup_oom_disable: 
+['warn_slowpath_null', 'kernel']
+
+d_lru_isolate: 
+['warn_slowpath_null', 'kernel']
+
+bio_integrity_add_page: 
+['printk', 'kernel']
+
+sb_issue_discard: 
+['blkdev_issue_discard', 'block']
+
+timerfd_canceled: 
+['ktime_get_monotonic_offset', 'kernel']
+
+trace_balance_dirty_pages_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+mpol_dup: 
+['__mpol_dup', 'mm']
+
+sock_orphan: 
+['_raw_write_lock_bh', 'kernel']
+['_raw_write_unlock_bh', 'kernel']
+
+netif_tx_lock_bh: 
+['local_bh_disable', 'kernel']
+
+ftrace_raw_event_global_dirty_state: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+get_fs_type: 
+['__request_module', 'kernel']
+
+register_trace_sched_kthread_stop_ret: 
+['tracepoint_probe_register', 'kernel']
+
+bd_unlink_disk_holder: 
+['mutex_lock', 'kernel']
+['warn_slowpath_null', 'kernel']
+['kfree', 'mm']
+['mutex_unlock', 'kernel']
+
+do_lock_file_wait: 
+['prepare_to_wait_event', 'kernel']
+['abort_exclusive_wait', 'kernel']
+['schedule', 'kernel']
+['finish_wait', 'kernel']
+
+pud_none_or_clear_bad: 
+['pud_clear_bad', 'mm']
+
+fasync_free: 
+['kmem_cache_free', 'mm']
+
+do_timerfd_settime: 
+['alarm_try_to_cancel', 'kernel']
+['hrtimer_try_to_cancel', 'kernel']
+['alarm_forward_now', 'kernel']
+['ns_to_timespec', 'kernel']
+['ns_to_timespec', 'kernel']
+
+bioset_integrity_free: 
+['mempool_destroy', 'mm']
+['mempool_destroy', 'mm']
+
+audit_mq_getsetattr: 
+['__audit_mq_getsetattr', 'kernel']
+
+sk_mc_loop: 
+['warn_slowpath_null', 'kernel']
+
+trace_sched_process_fork_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+d_shrink_del: 
+['warn_slowpath_null', 'kernel']
+
+ftrace_raw_output_writeback_dirty_inode_template: 
+['ftrace_raw_output_prep', 'kernel']
+
+trace_block_bio_complete_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+irq_set_lockdep_class: 
+['irq_to_desc', 'kernel']
+
+register_trace_block_getrq: 
+['tracepoint_probe_register', 'kernel']
+
+wait_on_bit_lock: 
+['out_of_line_wait_on_bit_lock', 'kernel']
+
+ftrace_define_fields_writeback_dirty_page: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+register_trace_sched_kthread_stop: 
+['tracepoint_probe_register', 'kernel']
+
+quiet_error: 
+['__printk_ratelimit', 'kernel']
+
+i_uid_write: 
+['make_kuid', 'kernel']
+
+irq_clear_status_flags: 
+['irq_modify_status', 'kernel']
+
+get_proc_task: 
+['get_pid_task', 'kernel']
+
+do_last: 
+['mutex_lock', 'kernel']
+['mutex_unlock', 'kernel']
+
+dequeue_signal_lock: 
+['_raw_spin_lock_irqsave', 'kernel']
+['dequeue_signal', 'kernel']
+
+bd_start_claiming: 
+['_cond_resched', 'kernel']
+['get_gendisk', 'block']
+['bdget_disk', 'block']
+['module_put', 'kernel']
+['put_disk', 'block']
+
+freezable_schedule_timeout_killable: 
+['schedule_timeout_killable', 'kernel']
+
+eventfd_ctx_remove_wait_queue: 
+['_raw_spin_lock_irqsave', 'kernel']
+['__wake_up_locked_key', 'kernel']
+
+trace_sched_process_exec_rcuidle: 
+['rcu_irq_enter', 'kernel']
+['rcu_irq_exit', 'kernel']
+
+ihold: 
+['warn_slowpath_null', 'kernel']
+
+single_open: 
+['kfree', 'mm']
+
+unregister_trace_sched_migrate_task: 
+['tracepoint_probe_unregister', 'kernel']
+
+enable_irq_wake: 
+['irq_set_irq_wake', 'kernel']
+
+__set_page_dirty_buffers: 
+['page_mapping', 'mm']
+
+ftrace_raw_output_writeback_sb_inodes_requeue: 
+['ftrace_raw_output_prep', 'kernel']
+
+core_sys_select: 
+['kfree', 'mm']
+
+pipe_proc_fn: 
+['proc_dointvec_minmax', 'kernel']
+
+allocflags_to_migratetype: 
+['warn_slowpath_null', 'kernel']
+
+ftrace_raw_event_balance_dirty_pages: 
+['trace_event_buffer_lock_reserve', 'kernel']
+['ring_buffer_event_data', 'kernel']
+['filter_check_discard', 'kernel']
+['trace_buffer_unlock_commit', 'kernel']
+
+wakeup_pipe_writers: 
+['__wake_up', 'kernel']
+
+unregister_trace_writeback_dirty_inode_start: 
+['tracepoint_probe_unregister', 'kernel']
+
+disable_irq_wake: 
+['irq_set_irq_wake', 'kernel']
+
+napi_disable: 
+['_cond_resched', 'kernel']
+['msleep', 'kernel']
+
+C_SYSC_timerfd_settime: 
+['get_compat_itimerspec', 'kernel']
+['put_compat_itimerspec', 'kernel']
+
+mpage_end_io: 
+['unlock_page', 'mm']
+['end_page_writeback', 'mm']
+
+wait_on_bit: 
+['out_of_line_wait_on_bit', 'kernel']
+
+unlock_new_inode: 
+['warn_slowpath_null', 'kernel']
+['wake_up_bit', 'kernel']
+
