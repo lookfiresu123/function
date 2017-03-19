@@ -509,7 +509,7 @@ def search_interface_per_function(function):
                                         continue
                         else:
                                 #my_dict[item] = function
-                                str = function + " -> " + item
+                                str = function + " " + item + " " + module
                                 #print str, index
                                 result_set.add(str)
                                 #print function + " -> " + item
@@ -523,20 +523,69 @@ def format_and_print_search_result(list):
         for str in list:
                 patterns = str.split();
                 call_function = patterns[0]
-                interface_function = patterns[2]
+                interface_function = patterns[1]
+                module = patterns[2]
                 value = dict.get(call_function)
                 if value == None:
-                        dict[call_function] = [interface_function]
+                        dict[call_function] = [interface_function + " " + module]
                 else:
-                        dict[call_function].insert(len(dict[call_function]), interface_function);
+                        dict[call_function].insert(len(dict[call_function]), interface_function + " " + module);
 
+        dict_per_module = {}
+        dict_per_module["mm"] = []
+        dict_per_module["kernel"] = []
+        dict_per_module["block"] = []
         for pattern in dict:
-                print pattern + " -> ", dict[pattern]
+                interfaces_per_subfunction = dict[pattern]
+                for item in interfaces_per_subfunction:
+                        strs = item.split()
+                        dict_per_module[strs[1]].insert(len(dict_per_module[strs[1]]), strs[0])
+
+        for pattern in dict_per_module:
+                print pattern + ": "
+                print "*********************************"
+                interfaces_per_module = dict_per_module[pattern]
+                interfaces_set = set([])
+                for item in interfaces_per_module:
+                        interfaces_set.add(item)
+                for item in interfaces_set:
+                        print item
+                print "*********************************"
+                print ""
+
+        
+        '''
+        for pattern in dict:
+                #print pattern + " -> ", dict[pattern]
+                print pattern + ": "
+                interfaces_per_subfunction = dict[pattern]
+                for item in interfaces_per_subfunction:
+                        strs = item.split()
+                        print [strs[0], strs[1]]
+                print ""
+        '''
 
         return
 
 def test_search_for_interface_per_function(function):
         search_interface_per_function(function)
+        
+        search_interface_per_function("ext2_get_acl")
+        search_interface_per_function("ext2_lookup")
+        search_interface_per_function("ext2_follow_link")
+        search_interface_per_function("page_put_link")
+        search_interface_per_function("ext2_tmpfile")
+        search_interface_per_function("dquot_alloc")
+        search_interface_per_function("dquot_acquire")
+        search_interface_per_function("dquot_commit")
+        search_interface_per_function("dquot_release")
+        search_interface_per_function("dquot_destroy")
+        search_interface_per_function("ext2_create")
+        search_interface_per_function("ext2_write_inode")
+        search_interface_per_function("ext2_evict_inode")
+        search_interface_per_function("fanotify_free_group_priv")
+        search_interface_per_function("ext2_destroy_inode")
+        
         #print my_set
 
         print function + ": "
