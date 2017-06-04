@@ -1,6 +1,6 @@
 import subprocess
 
-symbals_file = open("/home/lookfiresu/Desktop/linux-3.13/symbals_function.txt")
+#symbals_file = open("/home/lookfiresu/Desktop/linux-3.13/symbals_function.txt")
 
 '''
 store information of symbals per module
@@ -23,6 +23,8 @@ collect_function_call_table = []
 collect_function_call_called_dict = {}                  # {call_function, [called_functions]}
 collect_interface_call_called_dict = {}                 # {call_function, [called_interfaces]}
 
+call_called_location_dict = {}                          # {call_function called_interfaces, location}
+
 my_set = set([])
 result_set = set([])
 have_analysised_set = set([])
@@ -41,6 +43,7 @@ store ast information of function call
 '''
 function_call_fs_namei_ast = open("/home/lookfiresu/function/function_call_ast/function_call_fs_namei_ast.txt", "r+")
 function_call_fs_ast = open("/home/lookfiresu/function/function_call_ast/function_call_fs_ast.txt", "r+")
+function_call_fs = open("/home/lookfiresu/function/call_info.txt", "r+")
 
 '''
 import symbals per modules
@@ -374,9 +377,6 @@ def collect_interface():
         return
 
 
-'''
-deal with function call information of fs/*.c and fs/ext2/*.c
-'''
 def collect_function_call_per_file(file, dict):
         temp_table = []
         called_functions = []
@@ -387,72 +387,55 @@ def collect_function_call_per_file(file, dict):
                 if not lines:
                         break
                 for line in lines:
-                        patterns = line.split()
+                        patterns = line.split(',')
                         temp_table.insert(len(temp_table), patterns)
 
                 for index in range(len(temp_table) - 1):
                         patterns = temp_table[index]
                         # if this is a call function record
-                        if patterns[0] == "FunctionDecl":
+                        if patterns[0].find('->') == -1:
                                 # determine defination with function call or (declaration or defination without function call)
                                 patterns_next = temp_table[index+1]
-                                if patterns_next[0] == "FunctionDecl":
+                                if patterns_next[0].find('->') == -1:
                                         # declaration or defination without function call
                                         continue
                                 # defination with function call
-                                if call_function != "" and called_functions != []:
-                                        dict[call_function] = called_functions
+                                call_function = patterns[0][1:-1]
+                                i = index+1
+                                while 1:
+                                        if i >= len(temp_table):
+                                                break
+                                        tmp = temp_table[i]
+                                        if tmp[0].find('->') == -1:
+                                                index = i
+                                                break
+                                        #print called_function
+                                        called_function = tmp[0][4:-1]
+                                        value = collect_symbals_dict.get(called_function)
+                                        if value == None:
+                                                pair = [called_function, "other"]
+                                                called_functions.insert(len(called_functions), pair)
+                                                keyword = call_function + " " + called_function
+                                                call_called_location_dict[keyword] = tmp[1]
+                                        else:
+                                                pair = [called_function, value[4]]
+                                                called_functions.insert(len(called_functions), pair)
+                                                keyword = call_function + " " + called_function
+                                                call_called_location_dict[keyword] = tmp[1]
+                                        i = i+1
+                                #print call_function
+                                dict[call_function] = called_functions
                                 called_functions = []
                                 call_function = ""
-                                for index in range(len(patterns) - 1):
-                                        if patterns[index].endswith('>'):
-                                                call_function = patterns[index+1]
-                        # if this is a called function record
-                        if patterns[0] == "DeclRefExpr":
-                                for pattern in patterns:
-                                        if pattern == "Function":
-                                                break;
-                                index = patterns.index(pattern)
-                                called_function = patterns[index+2]
-                                called_function = called_function.replace("\'", "")
-                                #print called_function
-                                value = collect_symbals_dict.get(called_function)
-                                if value == None:
-                                        pair = [called_function, "other"]
-                                        called_functions.insert(len(called_functions), pair)
-                                else:
-                                        pair = [called_function, value[4]]
-                                        called_functions.insert(len(called_functions), pair)
- 
+
 
         return
-'''
-                        for pattern in patterns:
-                                if pattern == "Function":
-                                        break;
-                        index = patterns.index(pattern)
-                        function = patterns[index+2]
-                        function = function.replace("\'", "")
-                        table.insert(len(table), function)
-return
-'''
 
 '''
 collect relationship between call_function and called_functions, and print their module
 '''
 def collect_function_call(module_from):
-        collect_function_call_per_file(function_call_fs_ast, collect_function_call_called_dict)
-        '''
-        for call_function in collect_function_call_called_dict:
-                called_functions = collect_function_call_called_dict[call_function]
-                #function_module_list = []
-                print call_function + ": "
-                for item in called_functions:
-                        print item
-                print ""
-        '''
-
-
+        collect_function_call_per_file(function_call_fs, collect_function_call_called_dict)
         return
 
 '''
@@ -554,16 +537,17 @@ def format_and_print_search_result(list):
                 print ""
 
         
-        '''
+        
         for pattern in dict:
                 #print pattern + " -> ", dict[pattern]
                 print pattern + ": "
                 interfaces_per_subfunction = dict[pattern]
                 for item in interfaces_per_subfunction:
                         strs = item.split()
-                        print [strs[0], strs[1]]
+                        keyword = pattern + " " + strs[0]
+                        print [strs[0], strs[1], call_called_location_dict[keyword].strip('\n')]
                 print ""
-        '''
+        
 
         return
 
@@ -602,6 +586,9 @@ def test_search_for_interface_per_module(module):
                 print pattern + ": "
                 called_interfaces = interface_per_module_dict[pattern]
                 for item in called_interfaces:
+                        called_interface = item[0]
+                        keyword = pattern + " " + called_interface
+                        item.insert(len(item), call_called_location_dict[keyword].strip('\n'))
                         print item
                 print ""
         return
