@@ -1,0 +1,1 @@
+clang -cc1 -load /home/lookfiresu/Desktop/llvm_source/build/lib/BoostCon.so -plugin boost-fns fs/*.c fs/ext2/*.c -Ifs/ -Ifs/ext2/ -Iconfig-3.13.0 -Iarch/x86/include -Iarch/x86/include/generated -Iinclude -Iarch/x86/include/uapi -Iarch/x86/include/generated/uapi -Iinclude/uapi -Iinclude/generated/uapi -include include/linux/kconfig.h &> call_info.txt
